@@ -7,22 +7,22 @@
 class Heap
 {
 public:
-	Heap(int *array, int n);
-	~Heap();
+    Heap(int *array, int n);
+    ~Heap();
 
-	void maxHeapify(int node);
-	void heapSort();
-	void print();
+    void maxHeapify(int node);
+    void heapSort();
+    void print();
 
-	// basic operation on index
-	int parent(int index) {return (index-1)/2;}
-	int left(int index) {return 2*index+1;}
-	int right(int index) {return 2*index+2;}
+    // basic operation on index
+    int parent(int index) {return (index-1)/2;}
+    int left(int index) {return 2*index+1;}
+    int right(int index) {return 2*index+2;}
 
 private:
-	void buildMaxHeap();
-	int A[MAX_SIZE];
-	int heapSize;
+    void buildMaxHeap();
+    int A[MAX_SIZE];
+    int heapSize;
 };
 
 

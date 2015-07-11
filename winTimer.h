@@ -24,17 +24,17 @@ namespace util
 
 class WinTimer {
 public:
-	WinTimer();
-	~WinTimer();
-	void start();
-	void stop();
-	void printResult();
-	void printResult(const char *title);
+    WinTimer();
+    ~WinTimer();
+    void start();
+    void stop();
+    void printResult();
+    void printResult(const char *title);
 
 private:
-	LARGE_INTEGER largeInteger;
-	double timerFreq;
-	__int64 c1, c2;
+    LARGE_INTEGER largeInteger;
+    double timerFreq;
+    __int64 c1, c2;
 };
 
 }
