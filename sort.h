@@ -10,8 +10,8 @@ public:
 	Heap(int *array, int n);
 	~Heap();
 
-	void max_heapify(int node);
-	void heapsort();
+	void maxHeapify(int node);
+	void heapSort();
 	void print();
 
 	// basic operation on index
@@ -20,10 +20,15 @@ public:
 	int right(int index) {return 2*index+2;}
 
 private:
-	void build_max_heap();
+	void buildMaxHeap();
 	int A[MAX_SIZE];
-	int heap_size;
+	int heapSize;
 };
+
+
+/* declaration of quick sort */
+void quickSort(int *A, int p, int r);
+void randomizedQuickSort(int *A, int p, int r);
 
 
 #endif

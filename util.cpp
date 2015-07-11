@@ -1,5 +1,7 @@
 #include "util.h"
 
+#include <stdio.h>
+
 namespace util
 {
 
@@ -24,5 +26,13 @@ max(int a, int b, int c)
 	return max(c, temp);
 }
 
+void
+printIntArray(int *A, int n)
+{
+	for (int i = 0; i < n; i++) {
+		printf("%d  ", A[i]);
+	}
+	printf("\n");
 }
 
+}
