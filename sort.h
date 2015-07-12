@@ -2,7 +2,20 @@
 #define _SORT_H_
 
 
-/* definition of Heap */
+/*
+ *------------------------------------------------------------------------------
+ *
+ * heap sort
+ *
+ * Sample code:
+ *   int array[10] = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
+ *   Heap heap = Heap(array, 10);
+ *   heap.heapSort();
+ *   heap.print();
+ *
+ *------------------------------------------------------------------------------
+ */
+
 #define MAX_SIZE 4096
 class Heap
 {
@@ -26,9 +39,42 @@ private:
 };
 
 
-/* declaration of quick sort */
+/*
+ *------------------------------------------------------------------------------
+ *
+ * quick sort implementation
+ *
+ * Sample code:
+ *
+ *
+ *------------------------------------------------------------------------------
+ */
+
 void quickSort(int *A, int p, int r);
 void randomizedQuickSort(int *A, int p, int r);
 
+
+/*
+ *------------------------------------------------------------------------------
+ *
+ * counting sort implementation
+ *
+ * Sample code:
+ *   int array[10] = {4, -1, 3, 2, 16, 9, 9, 14, 8, 7};
+ *   int result[10];
+ *   if (countingSort(array, result, 10, 20)) {
+ *       util::printIntArray(result, 10);
+ *   }
+ *
+ * Note:
+ *   elements should be between 0 and k.
+ *
+ * Return:
+ *   true if succeed, false if failed.
+ *
+ *------------------------------------------------------------------------------
+ */
+
+bool countingSort(int *A, int *B, int n, int k);
 
 #endif

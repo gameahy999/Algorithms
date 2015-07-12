@@ -22,17 +22,22 @@ main(int argc, char **argv)
     util::WinTimer t = util::WinTimer();
     t.start();
 
-    int array[10] = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
+    int array[10] = {4, 1, 3, 2, 16, 9, 9, 14, 8, 7};
+    int result[10];
 
     // Heap heap = Heap(array, 10);
     // heap.heapSort();
     // heap.print();
-    quickSort(array, 0, 9);
-    util::printIntArray(array, 10);
+
+    // quickSort(array, 0, 9);
+    // util::printIntArray(array, 10);
+
+    if (countingSort(array, result, 10, 20)) {
+        util::printIntArray(result, 10);
+    }
 
     t.stop();
-    t.printResult();
-    t.printResult("quick sort");
+    t.printResult("counting sort");
 
 
     return 0;

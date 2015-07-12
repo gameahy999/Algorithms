@@ -8,12 +8,6 @@
  *
  * heap sort implementation
  *
- * Sample code:
- *   int array[10] = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
- *   Heap heap = Heap(array, 10);
- *   heap.heapSort();
- *   heap.print();
- *
  *------------------------------------------------------------------------------
  */
 
@@ -95,9 +89,6 @@ Heap::print()
  *
  * quick sort implementation
  *
- * Sample code:
- *
- *
  *------------------------------------------------------------------------------
  */
 
@@ -136,9 +127,6 @@ quickSort(int *A, int p, int r)
  *
  * randomized quick sort implementation
  *
- * Sample code:
- *
- *
  *------------------------------------------------------------------------------
  */
 
@@ -160,4 +148,47 @@ randomizedQuickSort(int *A, int p, int r)
         /* Merge : the array war sorted in place,
          * so, need to do nothing for merge. */
     }
+}
+
+
+/*
+ *------------------------------------------------------------------------------
+ *
+ * counting sort implementation
+ *
+ *------------------------------------------------------------------------------
+ */
+
+bool
+countingSort(int *A, int *B, int n, int k)
+{
+    if (k < n ||
+        k < util::max(A, n) ||
+        util::min(A, n) < 0) {
+        printf("Hypothesis of counting sort is not established\n");
+        return false;
+    }
+
+    int *C = new int[k];
+
+    // Initialized the temp memory.
+    for (int i = 0; i < k; i++) {
+        C[i] = 0;
+    }
+
+    for (int i = 0; i < n; i++) {
+        C[A[i]]++;
+    }
+
+    for (int i = 1; i < k; i++) {
+        C[i] = C[i] + C[i-1];
+    }
+
+    for (int j = n-1; j >= 0; j--) {
+        B[C[A[j]] - 1] = A[j];
+        C[A[j]]--;
+    }
+
+    delete [] C;
+    return true;
 }
