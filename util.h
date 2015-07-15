@@ -27,6 +27,18 @@ int min(int *A, int n);
 
 void printIntArray(int *A, int n);
 
+class RandomGenerator
+{
+public:
+    RandomGenerator();
+    ~RandomGenerator();
+    int getRandomInt(int a, int b);
+    double getRandomDouble(double a, double b);
+
+private:
+    static bool seedValid;
+};
+
 }
 
 #endif

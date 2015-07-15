@@ -133,8 +133,10 @@ quickSort(int *A, int p, int r)
 static int
 _randomizedPartition(int *A, int p, int r)
 {
-    // TODO:
-    return 0;
+    util::RandomGenerator rg = util::RandomGenerator();
+    int randomIndex = rg.getRandomInt(p, r);
+    util::swap(A[r], A[randomIndex]);
+    return _partition(A, p, r);
 }
 
 void
@@ -191,4 +193,30 @@ countingSort(int *A, int *B, int n, int k)
 
     delete [] C;
     return true;
+}
+
+/*
+ *------------------------------------------------------------------------------
+ *
+ * randomized select implementation
+ *
+ *------------------------------------------------------------------------------
+ */
+
+int
+randomizedSelect(int *A, int p, int r, int i)
+{
+    if (p == r) {
+        return A[p];
+    }
+
+    int pivot = _randomizedPartition(A, p, r);
+    int k = pivot-p+1;
+    if (i == k) {
+        return A[pivot];
+    } else if (i < k) {
+        return randomizedSelect(A, p, pivot-1, i);
+    } else {
+        return randomizedSelect(A, pivot+1, r, i-k);
+    }
 }

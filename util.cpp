@@ -1,6 +1,8 @@
 #include "util.h"
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 namespace util
 {
@@ -74,6 +76,44 @@ printIntArray(int *A, int n)
         printf("%d  ", A[i]);
     }
     printf("\n");
+}
+
+
+/*
+ *------------------------------------------------------------------------------
+ *
+ * RandomGenerator implementation
+ *
+ *   get int in [a, b] and get double in [a, b]
+ *
+ *------------------------------------------------------------------------------
+ */
+
+bool RandomGenerator::seedValid = false;
+
+RandomGenerator::RandomGenerator()
+{
+    if (!seedValid) {
+        srand(time(NULL));
+        seedValid = true;
+        printf("seed was set\n");
+    }
+}
+
+RandomGenerator::~RandomGenerator()
+{
+}
+
+int
+RandomGenerator::getRandomInt(int a, int b)
+{
+    return a + rand() % (b-a+1);
+}
+
+double
+RandomGenerator::getRandomDouble(double a, double b)
+{
+    return ((double)rand()/RAND_MAX)*(b-a) + a;
 }
 
 }

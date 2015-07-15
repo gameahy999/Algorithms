@@ -45,7 +45,8 @@ private:
  * quick sort implementation
  *
  * Sample code:
- *
+ *   int array[10] = {4, 1, 3, 2, 16, 9, 9, 14, 8, 7};
+ *   quickSort(array, 0, 9);
  *
  *------------------------------------------------------------------------------
  */
@@ -76,5 +77,23 @@ void randomizedQuickSort(int *A, int p, int r);
  */
 
 bool countingSort(int *A, int *B, int n, int k);
+
+
+/*
+ *------------------------------------------------------------------------------
+ *
+ * randomized select implementation
+ *
+ * Sample code:
+ *   int array[10] = {4, 1, 3, 2, 16, 9, 9, 14, 8, 7};
+ *   randomizedSelect(array, 0, 9, i);
+ *
+ * Return:
+ *   the ist smallest element in the array from p to r.
+ *
+ *------------------------------------------------------------------------------
+ */
+
+int randomizedSelect(int *A, int p, int r, int i);
 
 #endif
