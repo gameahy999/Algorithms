@@ -13,9 +13,7 @@
 
 Heap::Heap(int *array, int n)
 {
-    for (int i = 0; i < n; i++) {
-        A[i] = array[i];
-    }
+    A = array;
     heapSize = n;
 
     buildMaxHeap();

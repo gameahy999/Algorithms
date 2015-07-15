@@ -34,7 +34,7 @@ public:
 
 private:
     void buildMaxHeap();
-    int A[MAX_SIZE];
+    int *A;
     int heapSize;
 };
 

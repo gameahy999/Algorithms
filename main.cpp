@@ -25,9 +25,9 @@ main(int argc, char **argv)
     int array[10] = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
     // int result[10];
 
-    // // Heap heap = Heap(array, 10);
-    // // heap.heapSort();
-    // // heap.print();
+    Heap heap = Heap(array, 10);
+    heap.heapSort();
+    heap.print();
 
     // // quickSort(array, 0, 9);
     // // util::printIntArray(array, 10);
@@ -52,9 +52,9 @@ main(int argc, char **argv)
 
     // cout << "max == " << max << endl;
     // cout << "min == " << min << endl;
-    for (int i = 1; i <= 10; i++) {
-        cout << randomizedSelect(array, 0, 9, i) << endl;
-    }
+    // for (int i = 1; i <= 10; i++) {
+    //     cout << randomizedSelect(array, 0, 9, i) << endl;
+    // }
 
     return 0;
 }
