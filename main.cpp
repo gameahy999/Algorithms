@@ -8,6 +8,22 @@ using namespace std;
 /*
  *------------------------------------------------------------------------------
  *
+ * Functions running before/after main function.
+ *
+ * It's a feature of gcc compiler, shouldn't depend on it excessively.
+ * The number is priority, 0 ~ 100 is reserved.
+ * Smaller, higher priority.
+ *
+ *------------------------------------------------------------------------------
+ */
+
+static void constructBeforeMain(void) __attribute__ ((constructor(150)));
+static void deconstructAfterMain(void) __attribute__ ((destructor(150)));
+
+
+/*
+ *------------------------------------------------------------------------------
+ *
  * Entry point of the whole program.
  *
  * It's only a place to have a test.
@@ -28,6 +44,8 @@ main(int argc, char **argv)
     Heap heap = Heap(array, 10);
     heap.heapSort();
     heap.print();
+
+    cout << util::gcd(12, 24) << endl;
 
     // // quickSort(array, 0, 9);
     // // util::printIntArray(array, 10);
@@ -57,4 +75,16 @@ main(int argc, char **argv)
     // }
 
     return 0;
+}
+
+static void
+constructBeforeMain(void)
+{
+    printf("--------------Begin-------------\n");
+}
+
+static void
+deconstructAfterMain(void)
+{
+    printf("---------------End--------------\n");
 }

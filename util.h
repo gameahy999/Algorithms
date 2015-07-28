@@ -27,6 +27,8 @@ int min(int *A, int n);
 
 void printIntArray(int *A, int n);
 
+int gcd(int a, int b);
+
 class RandomGenerator
 {
 public:
