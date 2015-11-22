@@ -1,8 +1,9 @@
 #include <iostream>
+#include <Windows.h>
+#include "ruminations.h"
 #include "sort.h"
 #include "util.h"
 #include "winTimer.h"
-#include <Windows.h>
 using namespace std;
 
 /*
@@ -17,8 +18,8 @@ using namespace std;
  *------------------------------------------------------------------------------
  */
 
-static void constructBeforeMain(void) __attribute__ ((constructor(150)));
-static void deconstructAfterMain(void) __attribute__ ((destructor(150)));
+// static void constructBeforeMain(void) __attribute__ ((constructor(150)));
+// static void deconstructAfterMain(void) __attribute__ ((destructor(150)));
 
 
 /*
@@ -34,18 +35,18 @@ static void deconstructAfterMain(void) __attribute__ ((destructor(150)));
 int
 main(int argc, char **argv)
 {
-
+    // Some practice on algorithms
     // util::WinTimer t = util::WinTimer();
     // t.start();
 
-    int array[10] = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
+    // int array[10] = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
     // int result[10];
 
-    Heap heap = Heap(array, 10);
-    heap.heapSort();
-    heap.print();
+    // Heap heap = Heap(array, 10);
+    // heap.heapSort();
+    // heap.print();
 
-    cout << util::gcd(12, 24) << endl;
+    // cout << util::gcd(12, 24) << endl;
 
     // // quickSort(array, 0, 9);
     // // util::printIntArray(array, 10);
@@ -74,17 +75,24 @@ main(int argc, char **argv)
     //     cout << randomizedSelect(array, 0, 9, i) << endl;
     // }
 
+    // Some practice on Ruminations on C++
+    // Test *t = new Test;
+    // delete t;
+    // Test t = Test();
+    Test s;
+    Test t(s);
+    s = t;
     return 0;
 }
 
-static void
-constructBeforeMain(void)
-{
-    printf("--------------Begin-------------\n");
-}
+// static void
+// constructBeforeMain(void)
+// {
+//     printf("--------------Begin-------------\n");
+// }
 
-static void
-deconstructAfterMain(void)
-{
-    printf("---------------End--------------\n");
-}
+// static void
+// deconstructAfterMain(void)
+// {
+//     printf("---------------End--------------\n");
+// }
