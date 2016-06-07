@@ -79,9 +79,12 @@ main(int argc, char **argv)
     // Test *t = new Test;
     // delete t;
     // Test t = Test();
-    Test s;
-    Test t(s);
-    s = t;
+    // Test s;
+    // Test t(s);
+    // s = t;
+
+
+
     return 0;
 }
 
