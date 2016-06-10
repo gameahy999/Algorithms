@@ -1,10 +1,13 @@
 #include <iostream>
 #include <Windows.h>
+
+#include "linkedList.h"
 #include "ruminations.h"
 #include "sort.h"
+#include "twoSum.h"
 #include "util.h"
 #include "winTimer.h"
-#include "twoSum.h"
+
 using namespace std;
 
 /*
@@ -36,18 +39,19 @@ using namespace std;
 int
 main(int argc, char **argv)
 {
-    test_twoSum();
+    // test_twoSum();
+    test_linkedList();
     return 0;
 }
 
-static void
-constructBeforeMain(void)
-{
-    printf("--------------Begin-------------\n");
-}
+// static void
+// constructBeforeMain(void)
+// {
+//     printf("--------------Begin-------------\n");
+// }
 
-static void
-deconstructAfterMain(void)
-{
-    printf("---------------End--------------\n");
-}
+// static void
+// deconstructAfterMain(void)
+// {
+//     printf("---------------End--------------\n");
+// }

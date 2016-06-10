@@ -14,12 +14,11 @@ twoSum(int *data, int length, int target)
         long currSum = data[begin] + data[end];
 
         if (currSum == target) {
-            //题目只要求输出满足条件的任意一对即可
             printf("%d %d\n", data[begin], data[end]);
 
-            //如果需要所有满足条件的数组对，则需要加上下面两条语句：
-            //begin++
-            //end--
+            // add the two statements below if outputing all pairs is required.
+            // begin++;
+            // end--;
             break;
         } else {
             if (currSum < target)
