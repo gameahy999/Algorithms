@@ -1,7 +1,6 @@
-#include "WinTimer.h"
-
 #include <stdio.h>
 
+#include "WinTimer.h"
 
 namespace util
 {

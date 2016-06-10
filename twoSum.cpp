@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include "twoSum.h"
+
 #include "sort.h"
+#include "twoSum.h"
 
 int
 twoSum(int *data, int length, int target)

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdio.h>
+
 #include "ruminations.h"
+
 using namespace std;
 
 int Test::count = 0;
