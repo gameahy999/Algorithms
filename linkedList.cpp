@@ -12,10 +12,11 @@ generateIntLinkedList(int count, ...)
 
     va_start(args, count);
     while(count--) {
+        ListNode *tmp = new ListNode(va_arg(args, int));
         if (head == NULL) {
-            head = tail = new ListNode(va_arg(args, int));
+            head = tail = tmp;
         } else {
-            tail->next = new ListNode(va_arg(args, int));
+            tail->next = tmp;
             tail = tail->next;
         }
     }

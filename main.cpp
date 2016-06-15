@@ -1,6 +1,7 @@
 #include <iostream>
 #include <Windows.h>
 
+#include "assignmentOperator.h"
 #include "linkedList.h"
 #include "ruminations.h"
 #include "sort.h"
@@ -40,7 +41,8 @@ int
 main(int argc, char **argv)
 {
     // test_twoSum();
-    test_linkedList();
+    // test_linkedList();
+    test_assignmentOperator();
     return 0;
 }
 

@@ -126,4 +126,4 @@ RandomGenerator::getRandomDouble(double a, double b)
     return ((double)rand()/RAND_MAX)*(b-a) + a;
 }
 
-}
+} // namespace util
