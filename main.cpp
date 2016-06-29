@@ -41,8 +41,8 @@ int
 main(int argc, char **argv)
 {
     // test_twoSum();
-    // test_linkedList();
-    test_assignmentOperator();
+    test_linkedList();
+    // test_assignmentOperator();
     return 0;
 }
 
