@@ -3,6 +3,15 @@
 
 #include "linkedList.h"
 
+/*
+ *------------------------------------------------------------------------------
+ *
+ * Generate a int linked list with the given parameters.
+ * The first parameter is the number of ints.
+ *
+ *------------------------------------------------------------------------------
+ */
+
 ListNode *
 generateIntLinkedList(int count, ...)
 {
@@ -25,6 +34,15 @@ generateIntLinkedList(int count, ...)
     return head;
 }
 
+
+/*
+ *------------------------------------------------------------------------------
+ *
+ * Reverse a linked list.
+ *
+ *------------------------------------------------------------------------------
+ */
+
 ListNode *
 reverseList(ListNode *pHead)
 {
@@ -46,6 +64,15 @@ reverseList(ListNode *pHead)
     return pReversedHead;
 }
 
+
+/*
+ *------------------------------------------------------------------------------
+ *
+ * Merge two (small to large) linked list to one.
+ *
+ *------------------------------------------------------------------------------
+ */
+
 ListNode *
 mergeList(ListNode *pHead1, ListNode *pHead2)
 {
@@ -66,6 +93,15 @@ mergeList(ListNode *pHead1, ListNode *pHead2)
     return pMergedHead;
 }
 
+
+/*
+ *------------------------------------------------------------------------------
+ *
+ * Print a linked list.
+ *
+ *------------------------------------------------------------------------------
+ */
+
 void
 printIntLinkedList(ListNode *head)
 {
@@ -77,6 +113,15 @@ printIntLinkedList(ListNode *head)
     }
     printf("\n");
 }
+
+
+/*
+ *------------------------------------------------------------------------------
+ *
+ * Reversingly print a linked list.
+ *
+ *------------------------------------------------------------------------------
+ */
 
 void
 printIntLinkedListReversingly_Recursively(ListNode *head)
@@ -93,6 +138,15 @@ void
 printIntLinkedListReversingly_Iteratively(ListNode *head)
 {
 }
+
+
+/*
+ *------------------------------------------------------------------------------
+ *
+ * Test entry.
+ *
+ *------------------------------------------------------------------------------
+ */
 
 void
 test_linkedList()
