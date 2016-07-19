@@ -2,8 +2,8 @@
 #include <Windows.h>
 
 #include "assignmentOperator.h"
-#include "exception.h"
 #include "linkedList.h"
+#include "myException.h"
 #include "ruminations.h"
 #include "sort.h"
 #include "twoSum.h"
@@ -44,7 +44,11 @@ main(int argc, char **argv)
     // test_twoSum();
     // test_linkedList();
     // test_assignmentOperator();
-    test_exception();
+    try {
+        test_exception();
+    } catch (MyException &e) {
+        cout << e.what() << endl;
+    }
     return 0;
 }
 

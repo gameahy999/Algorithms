@@ -201,7 +201,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit16]
-FileName=exception.cpp
+FileName=myException.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -211,7 +211,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit17]
-FileName=exception.h
+FileName=myException.h
 CompileCpp=1
 Folder=
 Compile=1

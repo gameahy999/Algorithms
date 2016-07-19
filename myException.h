@@ -3,9 +3,10 @@
 
 void test_exception();
 
-class MyException
+class MyException : public std::exception
 {
-
+public:
+    virtual const char* what();
 };
 
 #endif
