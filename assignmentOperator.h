@@ -4,7 +4,7 @@
 class CMyString
 {
 public:
-    CMyString(char* pData = NULL);
+    CMyString(const char* pData = NULL);
     CMyString(const CMyString& str);
     ~CMyString(void);
 
