@@ -6,6 +6,7 @@
 #include "myException.h"
 #include "ruminations.h"
 #include "sort.h"
+#include "solutions.h"
 #include "twoSum.h"
 #include "util.h"
 #include "winTimer.h"
@@ -44,11 +45,12 @@ main(int argc, char **argv)
     // test_twoSum();
     // test_linkedList();
     // test_assignmentOperator();
-    try {
-        test_exception();
-    } catch (MyException &e) {
-        cout << e.what() << endl;
-    }
+    // try {
+    //     test_exception();
+    // } catch (MyException &e) {
+    //     cout << e.what() << endl;
+    // }
+    // test_countBits();
     return 0;
 }
 
