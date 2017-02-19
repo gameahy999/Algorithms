@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "binaryTree.h"
 #include "util.h"
 
 
 /* 226. Invert Binary Tree */
 
-// TODO: create a seperate file tree.cpp and move this problem into that file
 /*
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -18,7 +18,13 @@
 struct TreeNode*
 invertTree(struct TreeNode* root)
 {
-    return NULL;
+    // Implemented in binaryTree.cpp file.
+    return invertBinaryTree(root);
+}
+
+void test_invertTree()
+{
+
 }
 
 
