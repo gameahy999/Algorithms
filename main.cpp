@@ -51,6 +51,7 @@ main(int argc, char **argv)
     //     cout << e.what() << endl;
     // }
     // test_countBits();
+    test_grayCode();
     return 0;
 }
 

@@ -5,6 +5,82 @@
 #include "util.h"
 
 
+/* 89. Gray Code */
+
+/* The gray code is a binary numeral system where two successive values differ in only one bit.
+
+Given a non-negative integer n representing the total number of bits in the code, print the sequence of gray code. A gray code sequence must begin with 0.
+
+For example, given n = 2, return [0,1,3,2]. Its gray code sequence is:
+00 - 0
+01 - 1
+11 - 3
+10 - 2
+
+
+Note:
+ For a given n, a gray code sequence is not uniquely defined.
+
+For example, [0,2,3,1] is also a valid gray code sequence according to the above definition.
+
+For now, the judge is able to judge based on one instance of gray code sequence. Sorry about that.
+*/
+
+/**
+ * Return an array of size *returnSize.
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int *
+grayCode(int n, int* returnSize)
+{
+    int *ret = NULL;
+
+    *returnSize = 1 << n;
+    ret = (int *)malloc(*returnSize * sizeof(int));
+    for (int i = 0; i < *returnSize; i++) {
+        // the ith gray code is (i >> 1) ^ i
+        ret[i] = (i >> 1) ^ i;
+    }
+
+    return ret;
+}
+
+void
+test_grayCode()
+{
+    int size = 0;
+    int *output = grayCode(3, &size);
+    util::printIntArray(output, size);
+    free(output);
+}
+
+
+/* 149. Max Points on a Line */
+
+/* Given n points on a 2D plane, find the maximum number
+ * of points that lie on the same straight line.
+ */
+
+/*
+ * Definition for a point.
+ * struct Point {
+ *     int x;
+ *     int y;
+ * }
+ */
+int
+maxPoints(struct Point* points, int pointsSize)
+{
+    return 0;
+}
+
+void
+test_maxPoints()
+{
+
+}
+
+
 /* 226. Invert Binary Tree */
 
 /*
@@ -24,7 +100,7 @@ invertTree(struct TreeNode* root)
 
 void test_invertTree()
 {
-
+    // Have already been tested in OJ
 }
 
 
@@ -71,6 +147,36 @@ test_countBits()
     int *output = countBits(5, &length);
     util::printIntArray(output, length);
     free(output);
+}
+
+
+/* 410. Split Array Largest Sum */
+
+/* Given an array which consists of non-negative integers and an integer m, you can split the array into m non-empty continuous subarrays. Write an algorithm to minimize the largest sum among these m subarrays.
+
+Note:
+ If n is the length of array, assume the following constraints are satisfied:
+•1 ≤ n ≤ 1000
+•1 ≤ m ≤ min(50, n)
+
+
+Examples:
+Input:
+nums = [7,2,5,10,8]
+m = 2
+
+Output:
+18
+
+Explanation:
+There are four ways to split nums into two subarrays.
+The best way is to split it into [7,2,5] and [10,8],
+where the largest sum among the two subarrays is only 18.
+*/
+
+int splitArray(int* nums, int numsSize, int m)
+{
+    return 0;
 }
 
 
