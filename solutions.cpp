@@ -29,6 +29,58 @@ test_search()
 }
 
 
+/* 60. Permutation Sequence */
+
+/* The set [1,2,3,…,n] contains a total of n! unique permutations.
+
+By listing and labeling all of the permutations in order,
+ We get the following sequence (ie, for n = 3):
+1."123"
+2."132"
+3."213"
+4."231"
+5."312"
+6."321"
+
+
+Given n and k, return the kth permutation sequence.
+
+Note: Given n will be between 1 and 9 inclusive.
+*/
+
+char *
+getPermutation(int n, int k)
+{
+    return NULL;
+}
+
+void
+test_getPermutation()
+{
+
+}
+
+
+/* 69. Sqrt(x) */
+
+/* Implement int sqrt(int x).
+
+Compute and return the square root of x.
+*/
+
+int
+mySqrt(int x)
+{
+    return 0;
+}
+
+void
+test_mySqrt()
+{
+
+}
+
+
 /* 89. Gray Code */
 
 /* The gray code is a binary numeral system where two successive values differ in only one bit.
@@ -174,6 +226,45 @@ test_countBits()
     int *output = countBits(5, &length);
     util::printIntArray(output, length);
     free(output);
+}
+
+
+/* 402. Remove K Digits */
+
+/* Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.
+
+Note:
+
+•The length of num is less than 10002 and will be ≥ k.
+•The given num does not contain any leading zero.
+
+Example 1:
+Input: num = "1432219", k = 3
+Output: "1219"
+Explanation: Remove the three digits 4, 3, and 2 to form the new number 1219 which is the smallest.
+
+Example 2:
+Input: num = "10200", k = 1
+Output: "200"
+Explanation: Remove the leading 1 and the number is 200. Note that the output must not contain leading zeroes.
+
+Example 3:
+Input: num = "10", k = 2
+Output: "0"
+Explanation: Remove all the digits from the number and it is left with nothing which is 0.
+
+*/
+
+char *
+removeKdigits(char* num, int k)
+{
+    return NULL;
+}
+
+void
+test_removeKdigits()
+{
+
 }
 
 
