@@ -51,7 +51,8 @@ main(int argc, char **argv)
     //     cout << e.what() << endl;
     // }
     // test_countBits();
-    test_grayCode();
+    // test_grayCode();
+    test_nextGreaterElement();
     return 0;
 }
 

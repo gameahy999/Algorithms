@@ -5,6 +5,30 @@
 #include "util.h"
 
 
+/* 33. Search in Rotated Sorted Array */
+
+/* Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+
+(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+You are given a target value to search. If found in the array return its index, otherwise return -1.
+
+You may assume no duplicate exists in the array.
+*/
+
+int
+search(int* nums, int numsSize, int target)
+{
+    return 0;
+}
+
+void
+test_search()
+{
+
+}
+
+
 /* 89. Gray Code */
 
 /* The gray code is a binary numeral system where two successive values differ in only one bit.
@@ -16,7 +40,6 @@ For example, given n = 2, return [0,1,3,2]. Its gray code sequence is:
 01 - 1
 11 - 3
 10 - 2
-
 
 Note:
  For a given n, a gray code sequence is not uniquely defined.
@@ -30,6 +53,7 @@ For now, the judge is able to judge based on one instance of gray code sequence.
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
+
 int *
 grayCode(int n, int* returnSize)
 {
@@ -68,6 +92,7 @@ test_grayCode()
  *     int y;
  * }
  */
+
 int
 maxPoints(struct Point* points, int pointsSize)
 {
@@ -91,6 +116,7 @@ test_maxPoints()
  *     struct TreeNode *right;
  * };
  */
+
 struct TreeNode*
 invertTree(struct TreeNode* root)
 {
@@ -123,6 +149,7 @@ getNumberOf1(int n)
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
+
 int *
 countBits(int num, int* returnSize)
 {
@@ -159,7 +186,6 @@ Note:
 •1 ≤ n ≤ 1000
 •1 ≤ m ≤ min(50, n)
 
-
 Examples:
 Input:
 nums = [7,2,5,10,8]
@@ -174,7 +200,8 @@ The best way is to split it into [7,2,5] and [10,8],
 where the largest sum among the two subarrays is only 18.
 */
 
-int splitArray(int* nums, int numsSize, int m)
+int
+splitArray(int* nums, int numsSize, int m)
 {
     return 0;
 }
@@ -225,8 +252,6 @@ Explanation:
     For number 1 in the first array, the next greater number for it in the second array is 3.
     For number 2 in the first array, there is no next greater number for it in the second array, so output -1.
 
-
-
 Example 2:
 
 Input: nums1 = [2,4], nums2 = [1,2,3,4].
@@ -234,8 +259,6 @@ Output: [3,-1]
 Explanation:
     For number 2 in the first array, the next greater number for it in the second array is 3.
     For number 4 in the first array, there is no next greater number for it in the second array, so output -1.
-
-
 
 Note:
 
@@ -247,8 +270,67 @@ Note:
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
-int*
+// TODO: create a seperate file contains find related algorithms.
+// Actually, it's not quick now.
+static int
+quickfind(int *nums, int numsSize, int target)
+{
+    if (nums == NULL) return -1;
+
+    int index = 0;
+
+    for (int i = 0; i < numsSize; i++) {
+        if (nums[i] == target) {
+            index = i;
+            break;
+        }
+    }
+    return index;
+}
+
+int *
 nextGreaterElement(int* findNums, int findNumsSize, int* nums, int numsSize, int* returnSize)
 {
-    return NULL;
+    *returnSize = findNumsSize;
+    int *ret = (int *)malloc((*returnSize) * sizeof(int));
+
+    for (int i = 0; i < findNumsSize; i++) {
+        int index = quickfind(nums, numsSize, findNums[i]);
+        ret[i] = -1;
+
+        if (index >= numsSize - 1) continue;
+
+        for (int j = index + 1; j < numsSize; j++) {
+            if (nums[j] > findNums[i]) {
+                ret[i] = nums[j];
+                break;
+            }
+        }
+    }
+    return ret;
+}
+
+void
+test_nextGreaterElement()
+{
+    // Input: nums1 = [4,1,2], nums2 = [1,3,4,2].
+    // Output: [-1,3,-1]
+    int nums1[3] = {4, 1, 2};
+    int nums2[4] = {1, 3, 4, 2};
+    int *ret = NULL;
+    int returnSize = 0;
+
+    ret = nextGreaterElement(nums1, 3, nums2, 4, &returnSize);
+    util::printIntArray(ret, returnSize);
+    free(ret);
+    ret = NULL;
+
+    // Input: nums1 = [2,4], nums2 = [1,2,3,4].
+    // Output: [3,-1]
+    int nums3[2] = {2, 4};
+    int nums4[4] = {1, 2, 3, 4};
+    ret = nextGreaterElement(nums3, 2, nums4, 4, &returnSize);
+    util::printIntArray(ret, returnSize);
+    free(ret);
+    ret = NULL;
 }

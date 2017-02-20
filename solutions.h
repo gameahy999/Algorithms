@@ -20,4 +20,7 @@ void test_invertTree();
 /* 338. Counting Bits */
 void test_countBits();
 
+/* 496. Next Greater Element I  */
+void test_nextGreaterElement();
+
 #endif
