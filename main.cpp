@@ -52,7 +52,8 @@ main(int argc, char **argv)
     // }
     // test_countBits();
     // test_grayCode();
-    test_nextGreaterElement();
+    // test_nextGreaterElement();
+    test_findAnagrams();
     return 0;
 }
 

@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "binaryTree.h"
+#include "search.h"
 #include "util.h"
 
 
@@ -25,7 +27,9 @@ search(int* nums, int numsSize, int target)
 void
 test_search()
 {
-
+    int nums[7] = {4, 5, 6, 7, 0, 1, 2};
+    printf("%d\n", search(nums, 7, 6));
+    printf("%d\n", search(nums, 7, 3));
 }
 
 
@@ -298,6 +302,130 @@ splitArray(int* nums, int numsSize, int m)
 }
 
 
+/* 438. Find All Anagrams in a String */
+
+/* Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.
+
+Strings consists of lowercase English letters only and the length of both strings s and p will not be larger than 20,100.
+
+The order of output does not matter.
+
+Example 1:
+Input:
+s: "cbaebabacd" p: "abc"
+
+Output:
+[0, 6]
+
+Explanation:
+The substring with start index = 0 is "cba", which is an anagram of "abc".
+The substring with start index = 6 is "bac", which is an anagram of "abc".
+
+Example 2:
+Input:
+s: "abab" p: "ab"
+
+Output:
+[0, 1, 2]
+
+Explanation:
+The substring with start index = 0 is "ab", which is an anagram of "ab".
+The substring with start index = 1 is "ba", which is an anagram of "ab".
+The substring with start index = 2 is "ab", which is an anagram of "ab".
+*/
+
+/*
+ * Return an array of size *returnSize.
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+void
+replaceFirstSpecifiedChar(char *p, char src, char dst)
+{
+    if (p == NULL) return;
+    int len = strlen(p);
+    if (len == 0) return;
+
+    for (int i = 0; i < len; i++) {
+        if (p[i] == src) {
+            p[i] = dst;
+            break;
+        }
+    }
+}
+
+static bool
+charInString(char a, const char *p)
+{
+    if (p == NULL) return false;
+    int len = strlen(p);
+    for (int i = 0; i < len; i++) {
+        if (a == p[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+static bool
+stringMatch(char *s, char *p, int len)
+{
+    if (s == NULL || *s == '\0' || len <= 0) return true;
+    if (strlen(s) < len) return false;
+    if (!charInString(*s, p)) return false;
+    else {
+        replaceFirstSpecifiedChar(p, *s, '$');
+        return stringMatch(s + 1, p, len - 1);
+    }
+}
+
+// XXX: This is too slow, but a work version.
+int *
+findAnagrams(char* s, char* p, int* returnSize)
+{
+    int index = 0;
+    int length = strlen(s);
+    char tmp[100] = {0};
+
+    if (length == 0) return NULL;
+
+    int *ret = (int *)malloc(length * sizeof(int));
+
+    for (int i = 0; i < length; i++) {
+        strcpy(tmp, p);
+        if (stringMatch(s + i, tmp, strlen(tmp))) {
+            ret[index++] = i;
+        }
+    }
+
+    *returnSize = index;
+    return ret;
+}
+
+void
+test_findAnagrams()
+{
+    // s: "cbaebabacd" p: "abc"
+    const char *s1 = "cbaebabacd";
+    const char *p1 = "abc";
+    int returnSize1 = 0;
+    int *ret1 = findAnagrams(const_cast<char *>(s1),
+                             const_cast<char *>(p1),
+                             &returnSize1);
+    util::printIntArray(ret1, returnSize1);
+    free(ret1);
+
+    // s: "abab" p: "ab"
+    const char *s2 = "abab";
+    const char *p2 = "ab";
+    int returnSize2 = 0;
+    int *ret2 = findAnagrams(const_cast<char *>(s2),
+                             const_cast<char *>(p2),
+                             &returnSize2);
+    util::printIntArray(ret1, returnSize2);
+    free(ret2);
+}
+
+
 /* 491. Increasing Subsequences */
 
 /* Given an integer array, your task is to find all the different possible increasing subsequences of the given array, and the length of an increasing subsequence should be at least 2 .
@@ -366,17 +494,7 @@ Note:
 static int
 quickfind(int *nums, int numsSize, int target)
 {
-    if (nums == NULL) return -1;
-
-    int index = 0;
-
-    for (int i = 0; i < numsSize; i++) {
-        if (nums[i] == target) {
-            index = i;
-            break;
-        }
-    }
-    return index;
+    slowSearch(nums, numsSize, target);
 }
 
 int *
