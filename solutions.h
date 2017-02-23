@@ -29,6 +29,9 @@ void test_countBits();
 /* 438. Find All Anagrams in a String */
 void test_findAnagrams();
 
+/* 461. Hamming Distance */
+void test_hammingDistance();
+
 /* 496. Next Greater Element I  */
 void test_nextGreaterElement();
 

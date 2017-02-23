@@ -54,6 +54,7 @@ main(int argc, char **argv)
     // test_grayCode();
     // test_nextGreaterElement();
     test_findAnagrams();
+    // test_hammingDistance();
     return 0;
 }
 

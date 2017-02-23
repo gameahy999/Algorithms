@@ -6,6 +6,9 @@
 #include "search.h"
 #include "util.h"
 
+#define DEBUG printf
+// #define DEBUG fake_printf
+void fake_printf(const char *format,...) {}
 
 /* 33. Search in Rotated Sorted Array */
 
@@ -338,66 +341,60 @@ The substring with start index = 2 is "ab", which is an anagram of "ab".
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
-void
-replaceFirstSpecifiedChar(char *p, char src, char dst)
-{
-    if (p == NULL) return;
-    int len = strlen(p);
-    if (len == 0) return;
 
-    for (int i = 0; i < len; i++) {
-        if (p[i] == src) {
-            p[i] = dst;
+static bool
+charMapEqual(int *s, int *p)
+{
+    bool ret = true;
+    for (int i = 0; i < 26; i++) {
+        if (s[i] != p[i]) {
+            ret = false;
             break;
         }
     }
+
+    return ret;
 }
 
-static bool
-charInString(char a, const char *p)
+static void
+initializeCharMap(int *charMap, char *input, int len)
 {
-    if (p == NULL) return false;
-    int len = strlen(p);
+    if (charMap == NULL) return;
     for (int i = 0; i < len; i++) {
-        if (a == p[i]) {
-            return true;
-        }
-    }
-    return false;
-}
-
-static bool
-stringMatch(char *s, char *p, int len)
-{
-    if (s == NULL || *s == '\0' || len <= 0) return true;
-    if (strlen(s) < len) return false;
-    if (!charInString(*s, p)) return false;
-    else {
-        replaceFirstSpecifiedChar(p, *s, '$');
-        return stringMatch(s + 1, p, len - 1);
+        charMap[input[i] - 'a']++;
     }
 }
 
-// XXX: This is too slow, but a work version.
 int *
 findAnagrams(char* s, char* p, int* returnSize)
 {
+    if (s == NULL) return NULL;
+
+    int len_s = strlen(s);
+    int len_p = strlen(p);
+    if (len_s < len_p) return NULL;
+
+    int *ret = (int *)malloc(len_s * sizeof(int));
+    int stringSCharMap[26] = {0};
+    int stringPCharMap[26] = {0};
+
+    initializeCharMap(stringPCharMap, p, len_p);
+    initializeCharMap(stringSCharMap, s, len_p);
+
+    *returnSize = 0;
     int index = 0;
-    int length = strlen(s);
-    char tmp[100] = {0};
-
-    if (length == 0) return NULL;
-
-    int *ret = (int *)malloc(length * sizeof(int));
-
-    for (int i = 0; i < length; i++) {
-        strcpy(tmp, p);
-        if (stringMatch(s + i, tmp, strlen(tmp))) {
+    for (int i = 0; i <= len_s - len_p; i++) {
+        if (charMapEqual(stringSCharMap, stringPCharMap)) {
             ret[index++] = i;
+            (*returnSize)++;
+        }
+
+        if (s[i + len_p] - 'a' >= 0) {
+            stringSCharMap[s[i] - 'a']--;
+            stringSCharMap[s[i + len_p] - 'a']++;
         }
     }
 
-    *returnSize = index;
     return ret;
 }
 
@@ -421,8 +418,41 @@ test_findAnagrams()
     int *ret2 = findAnagrams(const_cast<char *>(s2),
                              const_cast<char *>(p2),
                              &returnSize2);
-    util::printIntArray(ret1, returnSize2);
+    util::printIntArray(ret2, returnSize2);
     free(ret2);
+
+    // s: "cbaebabacd" p: "abc"
+    const char *s3 = "cbaebabacd";
+    const char *p3 = "abc";
+    int returnSize3 = 0;
+    int *ret3 = findAnagrams(const_cast<char *>(s3),
+                             const_cast<char *>(p3),
+                             &returnSize3);
+    util::printIntArray(ret2, returnSize3);
+    free(ret3);
+}
+
+
+/* 461. Hamming Distance */
+
+int
+hammingDistance(int x, int y)
+{
+    int count = 0;
+    int n = x ^ y;
+
+    while (n) {
+        n = (n - 1) & n;
+        count++;
+    }
+
+    return count;
+}
+
+void
+test_hammingDistance()
+{
+    printf("%d\n", hammingDistance(1, 4));
 }
 
 
