@@ -53,8 +53,10 @@ main(int argc, char **argv)
     // test_countBits();
     // test_grayCode();
     // test_nextGreaterElement();
-    test_findAnagrams();
+    // test_findAnagrams();
     // test_hammingDistance();
+    // test_findComplement();
+    test_findWords();
     return 0;
 }
 

@@ -2,9 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <iostream>
+#include <vector>
+#include <string>
+
 #include "binaryTree.h"
 #include "search.h"
 #include "util.h"
+
+using namespace std;
 
 #define DEBUG printf
 // #define DEBUG fake_printf
@@ -48,7 +54,6 @@ By listing and labeling all of the permutations in order,
 4."231"
 5."312"
 6."321"
-
 
 Given n and k, return the kth permutation sequence.
 
@@ -456,6 +461,49 @@ test_hammingDistance()
 }
 
 
+/* 476. Number Complement */
+
+/* Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.
+
+Note:
+
+1.The given integer is guaranteed to fit within the range of a 32-bit signed integer.
+2.You could assume no leading zero bit in the integer’s binary representation.
+
+Example 1:
+
+Input: 5
+Output: 2
+Explanation: The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.
+
+Example 2:
+
+Input: 1
+Output: 0
+Explanation: The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.
+*/
+
+int
+findComplement(int num)
+{
+    int tmp = num;
+    int mask = 1;
+
+    while (tmp) {
+        tmp >>= 1;
+        mask <<= 1;
+    }
+    return (mask - 1) ^ num;
+}
+
+void
+test_findComplement()
+{
+    printf("%d\n", findComplement(5));
+    printf("%d\n", findComplement(1));
+}
+
+
 /* 491. Increasing Subsequences */
 
 /* Given an integer array, your task is to find all the different possible increasing subsequences of the given array, and the length of an increasing subsequence should be at least 2 .
@@ -519,8 +567,7 @@ Note:
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
-// TODO: create a seperate file contains find related algorithms.
-// Actually, it's not quick now.
+
 static int
 quickfind(int *nums, int numsSize, int target)
 {
@@ -572,4 +619,58 @@ test_nextGreaterElement()
     util::printIntArray(ret, returnSize);
     free(ret);
     ret = NULL;
+}
+
+/* 500. Keyboard Row */
+
+/* Example 1:
+
+Input: ["Hello", "Alaska", "Dad", "Peace"]
+Output: ["Alaska", "Dad"]
+
+*/
+
+vector<string>
+findWords(vector<string>& words)
+{
+    // Row number for  A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
+    int charMap[26] = {2, 3, 3, 2, 1, 2, 2, 2, 1, 2, 2, 2, 3, 3, 1, 1, 1, 1, 2, 1, 1, 3, 1, 3, 1, 3};
+    std::vector<string> svec;
+    for (vector<string>::iterator iter = words.begin(); iter != words.end(); iter++) {
+        if ((*iter).length() <= 1) {
+            svec.push_back(*iter);
+            continue;
+        }
+
+        int line = charMap[tolower((*iter)[0]) - 'a'];
+        bool canTypeInOneRow = true;
+        for (int i = 1; i < (*iter).length(); i++) {
+            if (line != charMap[tolower((*iter)[i]) - 'a']) {
+                canTypeInOneRow = false;
+                break;
+            }
+        }
+        if (canTypeInOneRow) {
+            svec.push_back(*iter);
+        }
+    }
+
+    return svec;
+}
+
+void
+test_findWords()
+{
+    std::vector<string> v;
+    v.push_back("Hello");
+    v.push_back("Alaska");
+    v.push_back("Dad");
+    v.push_back("Peace");
+
+    std::vector<string> v_output = findWords(v);
+    for (vector<string>::iterator iter = v_output.begin();
+         iter != v_output.end();
+         iter++) {
+        cout << *iter << endl;
+    }
 }

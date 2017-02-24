@@ -32,7 +32,13 @@ void test_findAnagrams();
 /* 461. Hamming Distance */
 void test_hammingDistance();
 
+/* 476. Number Complement */
+void test_findComplement();
+
 /* 496. Next Greater Element I  */
 void test_nextGreaterElement();
+
+/* 500. Keyboard Row */
+void test_findWords();
 
 #endif
