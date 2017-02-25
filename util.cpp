@@ -78,6 +78,30 @@ printIntArray(int *A, int n)
     printf("\n");
 }
 
+void
+printBin(int n)
+{
+    char buf[33] = {0};
+    itoa(n, buf, 2);
+    printf("%s\n", buf);
+}
+
+void
+printOct(int n)
+{
+    char buf[16] = {0};
+    itoa(n, buf, 8);
+    printf("0%s\n", buf);
+}
+
+void
+printHex(int n)
+{
+    char buf[16] = {0};
+    itoa(n, buf, 16);
+    printf("0x%s\n", buf);
+}
+
 int
 gcd(int a, int b)
 {

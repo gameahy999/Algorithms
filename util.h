@@ -25,6 +25,9 @@ int min(int a, int b);
 int min(int a, int b, int c);
 int min(int *A, int n);
 
+void printBin(int n);
+void printOct(int n);
+void printHex(int n);
 void printIntArray(int *A, int n);
 
 int gcd(int a, int b);
