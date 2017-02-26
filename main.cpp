@@ -41,7 +41,7 @@ using namespace std;
 int
 main(int argc, char **argv)
 {
-    test_twoSum();
+    // test_twoSum();
     // test_linkedList();
     // test_assignmentOperator();
     // try {
@@ -58,6 +58,7 @@ main(int argc, char **argv)
     // test_findWords();
     // test_reverseString();
     // test_fizzBuzz();
+    test_islandPerimeter();
     return 0;
 }
 

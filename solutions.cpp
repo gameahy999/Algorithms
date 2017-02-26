@@ -1,3 +1,4 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -616,6 +617,67 @@ void
 test_hammingDistance()
 {
     printf("%d\n", hammingDistance(1, 4));
+}
+
+
+/* 463. Island Perimeter */
+
+/* You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water. Grid cells are connected horizontally/vertically (not diagonally). The grid is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells). The island doesn't have "lakes" (water inside that isn't connected to the water around the island). One cell is a square with side length 1. The grid is rectangular, width and height don't exceed 100. Determine the perimeter of the island.
+
+Example:
+[[0,1,0,0],
+ [1,1,1,0],
+ [0,1,0,0],
+ [1,1,0,0]]
+
+Answer: 16
+
+*/
+
+static int
+getGridElement(const std::vector<vector<int> >& grid,
+               int row,
+               int rowSize,
+               int col,
+               int colSize)
+{
+    if (row < 0 || col < 0 || row >= rowSize || col >= colSize) return 0;
+    return grid[row][col];
+}
+
+int islandPerimeter(vector<vector<int> >& grid)
+{
+    int row = grid.size();
+    if (row == 0) return 0;
+
+    int col = grid[0].size();
+    int ret = 0;
+
+    for (int i = -1; i < row; i++) {
+        for (int j = -1; j < col; j++) {
+            ret += abs(getGridElement(grid, i + 1, row, j, col) -
+                       getGridElement(grid, i, row, j, col));
+            ret += abs(getGridElement(grid, i, row, j + 1, col) -
+                       getGridElement(grid, i, row, j, col));
+        }
+    }
+    return ret;
+}
+
+void
+test_islandPerimeter()
+{
+    int grid[16] = {0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0};
+    vector<vector<int> > v;
+    std::vector<int> v0(&grid[0], &grid[3]);
+    std::vector<int> v1(&grid[4], &grid[7]);
+    std::vector<int> v2(&grid[8], &grid[11]);
+    std::vector<int> v3(&grid[12], &grid[15]);
+    v.push_back(v0);
+    v.push_back(v1);
+    v.push_back(v2);
+    v.push_back(v3);
+    printf("%d\n", islandPerimeter(v));
 }
 
 

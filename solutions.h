@@ -40,6 +40,9 @@ void test_findAnagrams();
 /* 461. Hamming Distance */
 void test_hammingDistance();
 
+/* 463. Island Perimeter */
+void test_islandPerimeter();
+
 /* 476. Number Complement */
 void test_findComplement();
 
