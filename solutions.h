@@ -1,6 +1,8 @@
 #ifndef _SOLUTIONS_H_
 #define _SOLUTIONS_H_
 
+/* 1. Two Sum */
+void test_twoSum();
 
 /* 33. Search in Rotated Sorted Array */
 void test_search();

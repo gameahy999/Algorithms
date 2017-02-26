@@ -7,7 +7,6 @@
 #include "ruminations.h"
 #include "sort.h"
 #include "solutions.h"
-#include "twoSum.h"
 #include "util.h"
 #include "winTimer.h"
 
@@ -42,7 +41,7 @@ using namespace std;
 int
 main(int argc, char **argv)
 {
-    // test_twoSum();
+    test_twoSum();
     // test_linkedList();
     // test_assignmentOperator();
     // try {
@@ -57,7 +56,7 @@ main(int argc, char **argv)
     // test_hammingDistance();
     // test_findComplement();
     // test_findWords();
-    test_reverseString();
+    // test_reverseString();
     // test_fizzBuzz();
     return 0;
 }

@@ -8,6 +8,7 @@
 
 #include "binaryTree.h"
 #include "search.h"
+#include "sort.h"
 #include "util.h"
 
 using namespace std;
@@ -15,6 +16,64 @@ using namespace std;
 #define DEBUG printf
 // #define DEBUG fake_printf
 void fake_printf(const char *format,...) {}
+
+// TODO: Devide this big file into five separate files in future.
+// solutions.cpp  ~ problems   1 -  99
+// solutions1.cpp ~ problems 100 - 199
+// solutions2.cpp ~ problems 200 - 299
+// solutions3.cpp ~ problems 300 - 399
+// solutions4.cpp ~ problems 400 - 499
+// solutions5.cpp ~ problems 500 - 599
+
+/* 1. Two Sum */
+
+/* Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+Example:
+
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+
+*/
+
+int
+twoSum(int *data, int length, int target)
+{
+    int begin = 0;
+    int end = length - 1;
+
+    quickSort(data, begin, end);
+
+    while (begin < end) {
+        long currSum = data[begin] + data[end];
+
+        if (currSum == target) {
+            printf("%d %d\n", data[begin], data[end]);
+
+            // add the two statements below if outputing all pairs is required.
+            // begin++;
+            // end--;
+            break;
+        } else {
+            if (currSum < target)
+                begin++;
+            else
+                end--;
+        }
+    }
+}
+
+void
+test_twoSum()
+{
+    int a[6] = {1, 2, 4, 7, 11, 15};
+    twoSum(a, 6, 15);
+}
+
 
 /* 33. Search in Rotated Sorted Array */
 
@@ -735,7 +794,9 @@ findWords(vector<string>& words)
     // Row number for  A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z
     int charMap[26] = {2, 3, 3, 2, 1, 2, 2, 2, 1, 2, 2, 2, 3, 3, 1, 1, 1, 1, 2, 1, 1, 3, 1, 3, 1, 3};
     std::vector<string> svec;
-    for (vector<string>::iterator iter = words.begin(); iter != words.end(); iter++) {
+    for (vector<string>::iterator iter = words.begin();
+         iter != words.end();
+         iter++) {
         if ((*iter).length() <= 1) {
             svec.push_back(*iter);
             continue;
