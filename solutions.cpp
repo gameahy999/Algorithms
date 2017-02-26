@@ -249,15 +249,6 @@ Example:
  Given s = "hello", return "olleh".
 */
 
-// TODO: move this function into util module
-void
-swapChar(char *a, char *b)
-{
-    char tmp = *a;
-    *a = *b;
-    *b = tmp;
-}
-
 char *
 reverseString(char *s)
 {
@@ -266,7 +257,7 @@ reverseString(char *s)
     int len = strlen(s);
     int head = 0, tail = len - 1;
     while (tail > head) {
-        swapChar(s + tail, s + head);
+        util::swapChar(s + tail, s + head);
         tail--;
         head++;
     }
@@ -380,7 +371,7 @@ Return:
 ]
 
 */
-// TODO: submit
+
 vector<string>
 fizzBuzz(int n)
 {
@@ -399,6 +390,7 @@ fizzBuzz(int n)
         }
         if (!specialString) {
             itoa(i, buf, 10);
+            // With C++ 11 support, we can simply use to_string(i) instead.
             str += (string(buf));
         }
         v.push_back(str);

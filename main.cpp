@@ -57,8 +57,8 @@ main(int argc, char **argv)
     // test_hammingDistance();
     // test_findComplement();
     // test_findWords();
-    // test_reverseString();
-    test_fizzBuzz();
+    test_reverseString();
+    // test_fizzBuzz();
     return 0;
 }
 

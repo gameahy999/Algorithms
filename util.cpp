@@ -15,6 +15,14 @@ swap(int &a, int &b)
     b = temp;
 }
 
+void
+swapChar(char *a, char *b)
+{
+    char tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
 int
 max(int a, int b)
 {

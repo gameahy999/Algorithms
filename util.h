@@ -17,6 +17,7 @@ namespace util
 {
 
 void swap(int &a, int &b);
+void swapChar(char *a, char *b);
 
 int max(int a, int b);
 int max(int a, int b, int c);
