@@ -241,6 +241,47 @@ test_countBits()
 }
 
 
+/* 344. Reverse String */
+
+/* Write a function that takes a string as input and returns the string reversed.
+
+Example:
+ Given s = "hello", return "olleh".
+*/
+
+// TODO: move this function into util module
+void
+swapChar(char *a, char *b)
+{
+    char tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+char *
+reverseString(char *s)
+{
+    if (s == NULL || strlen(s) <= 1) return s;
+
+    int len = strlen(s);
+    int head = 0, tail = len - 1;
+    while (tail > head) {
+        swapChar(s + tail, s + head);
+        tail--;
+        head++;
+    }
+    return s;
+}
+
+void
+test_reverseString()
+{
+    char tmp[10];
+    strcpy(tmp, "hello");
+    printf("%s\n", reverseString(tmp));
+}
+
+
 /* 402. Remove K Digits */
 
 /* Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.
@@ -307,6 +348,72 @@ int
 splitArray(int* nums, int numsSize, int m)
 {
     return 0;
+}
+
+
+/* 412. Fizz Buzz */
+
+/*Write a program that outputs the string representation of numbers from 1 to n.
+
+But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”.
+
+Example:
+n = 15,
+
+Return:
+[
+    "1",
+    "2",
+    "Fizz",
+    "4",
+    "Buzz",
+    "Fizz",
+    "7",
+    "8",
+    "Fizz",
+    "Buzz",
+    "11",
+    "Fizz",
+    "13",
+    "14",
+    "FizzBuzz"
+]
+
+*/
+// TODO: submit
+vector<string>
+fizzBuzz(int n)
+{
+    std::vector<string> v;
+    char buf[10] = {0};
+    for (int i = 1; i <= n; i++) {
+        string str = "";
+        bool specialString = false;
+        if (i % 3 == 0) {
+            str += (string("Fizz"));
+            specialString = true;
+        }
+        if (i % 5 == 0) {
+            str += (string("Buzz"));
+            specialString = true;
+        }
+        if (!specialString) {
+            itoa(i, buf, 10);
+            str += (string(buf));
+        }
+        v.push_back(str);
+    }
+
+    return v;
+}
+
+void
+test_fizzBuzz()
+{
+    std::vector<string> v = fizzBuzz(15);
+    for (vector<string>::iterator iter = v.begin(); iter != v.end(); iter++) {
+        cout << *iter << endl;
+    }
 }
 
 

@@ -26,6 +26,12 @@ void test_invertTree();
 /* 338. Counting Bits */
 void test_countBits();
 
+/* 344. Reverse String */
+void test_reverseString();
+
+/* 412. Fizz Buzz */
+void test_fizzBuzz();
+
 /* 438. Find All Anagrams in a String */
 void test_findAnagrams();
 
