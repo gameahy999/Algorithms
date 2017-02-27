@@ -58,7 +58,9 @@ main(int argc, char **argv)
     // test_findWords();
     // test_reverseString();
     // test_fizzBuzz();
-    test_islandPerimeter();
+    // test_islandPerimeter();
+    test_findMaxConsecutiveOnes();
+    // test_canWinNim();
     return 0;
 }
 

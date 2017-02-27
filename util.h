@@ -30,6 +30,7 @@ void printBin(int n);
 void printOct(int n);
 void printHex(int n);
 void printIntArray(int *A, int n);
+void printBool(bool trueOrFalse);
 
 int gcd(int a, int b);
 

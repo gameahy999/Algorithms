@@ -87,6 +87,12 @@ printIntArray(int *A, int n)
 }
 
 void
+printBool(bool trueOrFalse)
+{
+    printf("%s\n", trueOrFalse ? "True" : "False");
+}
+
+void
 printBin(int n)
 {
     char buf[33] = {0};

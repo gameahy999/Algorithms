@@ -25,6 +25,9 @@ void test_maxPoints();
 /* 226. Invert Binary Tree */
 void test_invertTree();
 
+/* 292. Nim Game */
+void test_canWinNim();
+
 /* 338. Counting Bits */
 void test_countBits();
 
@@ -45,6 +48,9 @@ void test_islandPerimeter();
 
 /* 476. Number Complement */
 void test_findComplement();
+
+/* 485. Max Consecutive Ones */
+void test_findMaxConsecutiveOnes();
 
 /* 496. Next Greater Element I  */
 void test_nextGreaterElement();
