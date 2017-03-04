@@ -34,11 +34,20 @@ void test_countBits();
 /* 344. Reverse String */
 void test_reverseString();
 
+/* 371. Sum of Two Integers */
+void test_getSum();
+
+/* 389. Find the Difference */
+void test_findTheDifference();
+
 /* 412. Fizz Buzz */
 void test_fizzBuzz();
 
 /* 438. Find All Anagrams in a String */
 void test_findAnagrams();
+
+/* 448. Find All Numbers Disappeared in an Array */
+void test_findDisappearedNumbers();
 
 /* 461. Hamming Distance */
 void test_hammingDistance();
@@ -57,5 +66,8 @@ void test_nextGreaterElement();
 
 /* 500. Keyboard Row */
 void test_findWords();
+
+/* 520. Detect Capital */
+void test_detectCapitalUse();
 
 #endif

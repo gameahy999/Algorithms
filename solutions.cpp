@@ -78,7 +78,7 @@ You may assume no duplicate exists in the array.
 */
 
 int
-search(int* nums, int numsSize, int target)
+search(int *nums, int numsSize, int target)
 {
     return 0;
 }
@@ -169,7 +169,7 @@ For now, the judge is able to judge based on one instance of gray code sequence.
  */
 
 int *
-grayCode(int n, int* returnSize)
+grayCode(int n, int *returnSize)
 {
     int *ret = NULL;
 

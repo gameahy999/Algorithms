@@ -31,7 +31,7 @@ using namespace std;
  */
 
 int
-maxPoints(struct Point* points, int pointsSize)
+maxPoints(struct Point *points, int pointsSize)
 {
     return 0;
 }

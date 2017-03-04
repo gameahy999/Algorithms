@@ -43,7 +43,7 @@ Explanation: Remove all the digits from the number and it is left with nothing w
 */
 
 char *
-removeKdigits(char* num, int k)
+removeKdigits(char *num, int k)
 {
     return NULL;
 }
@@ -79,7 +79,7 @@ where the largest sum among the two subarrays is only 18.
 */
 
 int
-splitArray(int* nums, int numsSize, int m)
+splitArray(int *nums, int numsSize, int m)
 {
     return 0;
 }
@@ -213,7 +213,7 @@ initializeCharMap(int *charMap, char *input, int len)
 }
 
 int *
-findAnagrams(char* s, char* p, int* returnSize)
+findAnagrams(char *s, char *p, int *returnSize)
 {
     if (s == NULL) return NULL;
 
@@ -277,6 +277,41 @@ test_findAnagrams()
                              &returnSize3);
     util::printIntArray(ret2, returnSize3);
     free(ret3);
+}
+
+
+/* 448. Find All Numbers Disappeared in an Array */
+
+/* Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+
+Find all the elements of [1, n] inclusive that do not appear in this array.
+
+Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space.
+
+Example:
+Input:
+[4,3,2,7,8,2,3,1]
+
+Output:
+[5,6]
+
+*/
+
+/**
+ * Return an array of size *returnSize.
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+int *
+findDisappearedNumbers(int *nums, int numsSize, int *returnSize)
+{
+    // TODO
+    return NULL;
+}
+
+void
+test_findDisappearedNumbers()
+{
+
 }
 
 
@@ -424,7 +459,7 @@ Note:
 */
 
 int
-findMaxConsecutiveOnes(int* nums, int numsSize)
+findMaxConsecutiveOnes(int *nums, int numsSize)
 {
     int max = 0;
     int count = 0;
@@ -473,7 +508,7 @@ Subscribe to see which companies asked this question.
  * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
  */
 int**
-findSubsequences(int* nums, int numsSize, int** columnSizes, int* returnSize)
+findSubsequences(int *nums, int numsSize, int** columnSizes, int *returnSize)
 {
     return NULL;
 }
@@ -520,7 +555,7 @@ quickfind(int *nums, int numsSize, int target)
 }
 
 int *
-nextGreaterElement(int* findNums, int findNumsSize, int* nums, int numsSize, int* returnSize)
+nextGreaterElement(int *findNums, int findNumsSize, int *nums, int numsSize, int *returnSize)
 {
     *returnSize = findNumsSize;
     int *ret = (int *)malloc((*returnSize) * sizeof(int));

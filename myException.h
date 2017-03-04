@@ -6,7 +6,7 @@ void test_exception();
 class MyException : public std::exception
 {
 public:
-    virtual const char* what();
+    virtual const char *what();
 };
 
 #endif

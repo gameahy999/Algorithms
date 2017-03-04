@@ -53,7 +53,7 @@ Test1()
 {
     printf("Test1 begins:\n");
 
-    const char* text = "Hello world";
+    const char *text = "Hello world";
 
     CMyString str1(text);
     CMyString str2;
@@ -71,7 +71,7 @@ Test2()
 {
     printf("Test2 begins:\n");
 
-    const char* text = "Hello world";
+    const char *text = "Hello world";
 
     CMyString str1(text);
     str1 = str1;
@@ -88,7 +88,7 @@ Test3()
 {
     printf("Test3 begins:\n");
 
-    const char* text = "Hello world";
+    const char *text = "Hello world";
 
     CMyString str1(text);
     CMyString str2, str3;

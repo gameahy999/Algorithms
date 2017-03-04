@@ -4,7 +4,7 @@
 class CMyString
 {
 public:
-    CMyString(const char* pData = NULL);
+    CMyString(const char *pData = NULL);
     CMyString(const CMyString& str);
     ~CMyString(void);
 
@@ -13,7 +13,7 @@ public:
     void Print();
 
 private:
-    char* m_pData;
+    char *m_pData;
 };
 
 void test_assignmentOperator();
