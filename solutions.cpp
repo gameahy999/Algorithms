@@ -266,14 +266,17 @@ For example, if there are 4 stones in the heap, then you will never win the game
 bool
 canWinNim(int n)
 {
-    // TODO
-    return false;
+    return (n % 4 != 0);
 }
 
 void
 test_canWinNim()
 {
-
+    util::printBool(canWinNim(4));
+    util::printBool(canWinNim(5));
+    util::printBool(canWinNim(6));
+    util::printBool(canWinNim(7));
+    util::printBool(canWinNim(1348820612));
 }
 
 
