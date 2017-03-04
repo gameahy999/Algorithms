@@ -22,8 +22,14 @@ struct Point {
 };
 void test_maxPoints();
 
+/* 167. Two Sum II - Input array is sorted */
+void test_twoSum_II();
+
 /* 226. Invert Binary Tree */
 void test_invertTree();
+
+/* 283. Move Zeroes */
+void test_moveZeros();
 
 /* 292. Nim Game */
 void test_canWinNim();
@@ -61,13 +67,22 @@ void test_findComplement();
 /* 485. Max Consecutive Ones */
 void test_findMaxConsecutiveOnes();
 
+/* 492. Construct the Rectangle */
+void test_constructRectangle();
+
 /* 496. Next Greater Element I  */
 void test_nextGreaterElement();
 
 /* 500. Keyboard Row */
 void test_findWords();
 
+/* 506. Relative Ranks */
+void test_findRelativeRanks();
+
 /* 520. Detect Capital */
 void test_detectCapitalUse();
+
+/* 530. Minimum Absolute Difference in BST */
+void test_getMinimumDifference();
 
 #endif

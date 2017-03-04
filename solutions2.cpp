@@ -40,6 +40,31 @@ void test_invertTree()
 }
 
 
+/* 283. Move Zeroes */
+
+/* Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
+
+Note:
+
+1.You must do this in-place without making a copy of the array.
+2.Minimize the total number of operations.
+*/
+
+void
+moveZeroes(int *nums, int numsSize)
+{
+    // TODO
+}
+
+void
+test_moveZeros()
+{
+
+}
+
+
 /* 292. Nim Game */
 
 /* You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. The one who removes the last stone will be the winner. You will take the first turn to remove the stones.
