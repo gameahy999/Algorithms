@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000001000000
-UnitCount=23
+UnitCount=28
 
 [VersionInfo]
 Major=1
@@ -261,7 +261,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit24]
-FileName=search.cpp
+FileName=solutions1.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -271,7 +271,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit25]
-FileName=search.h
+FileName=solutions2.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -292,6 +292,36 @@ BuildCmd=
 
 [Unit11]
 FileName=linkedList.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit26]
+FileName=solutions3.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit27]
+FileName=solutions4.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit28]
+FileName=solutions5.cpp
 CompileCpp=1
 Folder=
 Compile=1
