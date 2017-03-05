@@ -63,7 +63,8 @@ main(int argc, char **argv)
     // test_canWinNim();
     // test_twoSum_II();
     // test_moveZeros();
-    test_getSum();
+    // test_getSum();
+    test_findTheDifference();
     return 0;
 }
 

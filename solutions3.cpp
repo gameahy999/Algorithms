@@ -147,12 +147,32 @@ Explanation:
 char
 findTheDifference(char *s, char *t)
 {
-    // TODO
-    return 'a';
+    int charMap[26] = {0};
+    int len_s = strlen(s);
+    int len_t = strlen(t);
+
+    for (int i = 0; i < len_s; i++) {
+        charMap[s[i] - 'a']++;
+    }
+
+    for (int i = 0; i < len_t; i++) {
+        charMap[t[i] - 'a']--;
+    }
+
+    for (int i = 0; i < 26; i++) {
+        if (charMap[i] != 0) {
+            return 'a' + i;
+        }
+    }
+    return 'E'; // 'E' means ERROR here.
 }
 
 void
 test_findTheDifference()
 {
+    const char *s = "abcd";
+    const char *t = "abcde";
 
+    printf("%c\n", findTheDifference(const_cast<char *>(s),
+                                     const_cast<char *>(t)));
 }
