@@ -61,7 +61,8 @@ main(int argc, char **argv)
     // test_islandPerimeter();
     // test_findMaxConsecutiveOnes();
     // test_canWinNim();
-    test_twoSum_II();
+    // test_twoSum_II();
+    test_moveZeros();
     return 0;
 }
 

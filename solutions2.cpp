@@ -55,13 +55,30 @@ Note:
 void
 moveZeroes(int *nums, int numsSize)
 {
-    // TODO
+    if (nums == NULL || numsSize == 0) return;
+
+    int index = 0;
+    for (int i = 0; i < numsSize; i++) {
+        if (nums[i] == 0) {
+            continue;
+        } else {
+            nums[index++] = nums[i];
+        }
+    }
+
+    for (int i = index; i < numsSize; i++) {
+        nums[i] = 0;
+    }
+
+    return;
 }
 
 void
 test_moveZeros()
 {
-
+    int a[5] = {0, 1, 0, 3, 12};
+    moveZeroes(a, 5);
+    util::printIntArray(a, 5);
 }
 
 
