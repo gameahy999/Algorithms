@@ -62,7 +62,8 @@ main(int argc, char **argv)
     // test_findMaxConsecutiveOnes();
     // test_canWinNim();
     // test_twoSum_II();
-    test_moveZeros();
+    // test_moveZeros();
+    test_getSum();
     return 0;
 }
 

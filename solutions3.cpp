@@ -106,14 +106,20 @@ Example:
 int
 getSum(int a, int b)
 {
-    // TODO
-    return 0;
+    while(b) {
+        int carry = a & b;
+        a = a ^ b;
+        b = carry << 1;
+    }
+
+    // It seems that you can also cheat the OJ system with simple return a + b
+    return a;
 }
 
 void
 test_getSum()
 {
-
+    printf("%d\n", getSum(1, 2));
 }
 
 
