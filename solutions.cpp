@@ -31,7 +31,7 @@ return [0, 1].
 
 */
 
-int
+void
 twoSum(int *data, int length, int target)
 {
     int begin = 0;

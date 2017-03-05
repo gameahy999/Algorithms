@@ -62,12 +62,46 @@ Output: index1=1, index2=2
 int *
 twoSum_II(int *numbers, int numbersSize, int target, int *returnSize)
 {
-    // TODO
-    return NULL;
+    *returnSize = 0;
+    if (numbers == NULL) return NULL;
+
+    int *ret = (int *)malloc(numbersSize * sizeof(int));
+    memset(ret, 0, numbersSize * sizeof(int));
+
+    int begin = 0;
+    int end = numbersSize - 1;
+    int index = 0;
+
+    while (begin < end) {
+        long currSum = numbers[begin] + numbers[end];
+
+        if (currSum == target) {
+            /* Note that your returned answers (both index1 and index2)
+             *are not zero-based.
+             */
+            ret[index++] = begin + 1;
+            ret[index++] = end + 1;
+
+            begin++;
+            end--;
+        } else {
+            if (currSum < target)
+                begin++;
+            else
+                end--;
+        }
+    }
+    *returnSize = index;
+
+    return ret;
 }
 
 void
 test_twoSum_II()
 {
-
+    int a[4] = {2, 7, 11, 15};
+    int returnSize = 0;
+    int *result = twoSum_II(a, 4, 9, &returnSize);
+    util::printIntArray(result, returnSize);
+    free(result);
 }

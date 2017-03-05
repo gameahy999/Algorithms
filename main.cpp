@@ -60,7 +60,8 @@ main(int argc, char **argv)
     // test_fizzBuzz();
     // test_islandPerimeter();
     // test_findMaxConsecutiveOnes();
-    test_canWinNim();
+    // test_canWinNim();
+    test_twoSum_II();
     return 0;
 }
 
