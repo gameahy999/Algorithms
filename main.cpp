@@ -65,7 +65,8 @@ main(int argc, char **argv)
     // test_moveZeros();
     // test_getSum();
     // test_findTheDifference();
-    test_detectCapitalUse();
+    // test_detectCapitalUse();
+    test_findDisappearedNumbers();
     return 0;
 }
 

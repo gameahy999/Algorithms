@@ -304,14 +304,33 @@ Output:
 int *
 findDisappearedNumbers(int *nums, int numsSize, int *returnSize)
 {
-    // TODO
-    return NULL;
+    if (nums == NULL || numsSize == 0) return NULL;
+
+    int *ret = (int *)malloc(numsSize * sizeof(int));
+    for (int i = 0; i < numsSize; i++) {
+        int tmp = abs(nums[i]);
+        nums[tmp - 1] = -abs(nums[tmp - 1]); // Perfect!
+    }
+
+    int index = 0;
+    for (int i = 0; i < numsSize; i++) {
+        if (nums[i] > 0) {
+            ret[index++] = i + 1;
+        }
+    }
+
+    *returnSize = index;
+    return ret;
 }
 
 void
 test_findDisappearedNumbers()
 {
-
+    int nums[8] = {4, 3, 2, 7, 8, 2, 3, 1};
+    int returnSize = 0;
+    int *output = findDisappearedNumbers(nums, 8, &returnSize);
+    util::printIntArray(output, returnSize);
+    free(output);
 }
 
 
