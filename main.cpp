@@ -64,7 +64,8 @@ main(int argc, char **argv)
     // test_twoSum_II();
     // test_moveZeros();
     // test_getSum();
-    test_findTheDifference();
+    // test_findTheDifference();
+    test_detectCapitalUse();
     return 0;
 }
 

@@ -136,17 +136,53 @@ Input: "FlaG"
 Output: False
 */
 
+static bool
+isAllLower(char *word)
+{
+    if (word == NULL || strlen(word) == 0) return true;
+
+    int len = strlen(word);
+    for (int i = 0; i < len; i++) {
+        if (isupper(word[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
+static bool
+isAllUpper(char *word)
+{
+    if (word == NULL || strlen(word) == 0) return true;
+
+    int len = strlen(word);
+    for (int i = 0; i < len; i++) {
+        if (islower(word[i])) {
+            return false;
+        }
+    }
+    return true;
+}
+
 bool
 detectCapitalUse(char *word)
 {
-    // TODO
-    return false;
+    if (word == NULL || strlen(word) == 0) return false;
+
+    if (isupper(word[0])) {
+        return isAllUpper(word + 1) || isAllLower(word + 1);
+    } else {
+        return isAllLower(word + 1);
+    }
 }
 
 void
 test_detectCapitalUse()
 {
-
+    const char *word1 = "USA";
+    util::printBool(detectCapitalUse(const_cast<char *>(word1)));
+    const char *word2 = "FlaG";
+    util::printBool(detectCapitalUse(const_cast<char *>(word2)));
 }
 
 
