@@ -564,14 +564,30 @@ Note:
 int *
 constructRectangle(int area, int *returnSize)
 {
-    // TODO
-    return NULL;
+    int *ret = (int *)malloc(2 * sizeof(int));
+    int l = sqrt(area), w = sqrt(area);
+
+    while (l * w != area) {
+        if (l * w < area) {
+            l++;
+        } else {
+            w--;
+        }
+    }
+    ret[0] = l;
+    ret[1] = w;
+
+    *returnSize = 2;
+    return ret;
 }
 
 void
 test_constructRectangle()
 {
-
+    int count = 0;
+    int *ret = constructRectangle(4, &count);
+    util::printIntArray(ret, count);
+    free(ret);
 }
 
 

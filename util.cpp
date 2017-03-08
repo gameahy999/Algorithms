@@ -80,6 +80,8 @@ min(int *A, int n)
 void
 printIntArray(int *A, int n)
 {
+    if (A == NULL || n <= 0) return;
+
     for (int i = 0; i < n; i++) {
         printf("%d  ", A[i]);
     }
