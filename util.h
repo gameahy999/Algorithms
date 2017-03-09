@@ -19,6 +19,7 @@ namespace util
 void swap(int &a, int &b);
 void swapChar(char *a, char *b);
 
+int abs_ex(int input);
 int max(int a, int b);
 int max(int a, int b, int c);
 int max(int *A, int n);

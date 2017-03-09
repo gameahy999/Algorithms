@@ -208,23 +208,49 @@ The minimum absolute difference is 1, which is the difference between 2 and 1 (o
 Note: There are at least two nodes in this BST.
 */
 
-/*
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     struct TreeNode *left;
- *     struct TreeNode *right;
- * };
- */
 int
 getMinimumDifference(struct TreeNode *root)
 {
-    // TODO
-    return 0;
+    int minimum = INT_MAX;
+    if (root == NULL || (root->left == NULL && root->right == NULL))
+        return minimum;
+
+    int leftSideMin =
+        util::min(getMinimumDifference(root->left),
+                  util::abs_ex(root->val - getMaxElementOfBinarySearchTree(root->left)));
+    int rightSideMin =
+        util::min(getMinimumDifference(root->right),
+                  util::abs_ex(getMinElementOfBinarySearchTree(root->right) - root->val));
+
+    return util::min(leftSideMin, rightSideMin);
 }
 
 void
 test_getMinimumDifference()
 {
+    printf("%d\n", getMinimumDifference(NULL));
 
+    TreeNode *root = new TreeNode(1);
+    TreeNode *node1 = root->right = new TreeNode(3);
+    TreeNode *node2 = node1->left = new TreeNode(2);
+    printf("%d\n", getMinimumDifference(root));
+    delete root;
+    delete node1;
+    delete node2;
+
+    root = new TreeNode(0);
+    node1 = new TreeNode(2236);
+    node2 = new TreeNode(1277);
+    TreeNode *node3 = new TreeNode(519);
+    TreeNode *node4 = new TreeNode(2776);
+    root->right = node1;
+    node1->left = node2;
+    node1->right = node4;
+    node2->left = node3;
+    printf("%d\n", getMinimumDifference(root));
+    delete root;
+    delete node1;
+    delete node2;
+    delete node3;
+    delete node4;
 }

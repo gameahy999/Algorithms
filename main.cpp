@@ -67,7 +67,8 @@ main(int argc, char **argv)
     // test_findTheDifference();
     // test_detectCapitalUse();
     // test_findDisappearedNumbers();
-    test_constructRectangle();
+    // test_constructRectangle();
+    test_getMinimumDifference();
     return 0;
 }
 

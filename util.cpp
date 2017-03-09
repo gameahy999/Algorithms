@@ -24,6 +24,20 @@ swapChar(char *a, char *b)
 }
 
 int
+abs_ex(int input)
+{
+    /*
+     * XXX: This is a workaround for the abs issue,
+     * abs(INT_MIN) will return a negative number...
+     */
+    if (input == INT_MIN) {
+        return INT_MAX;
+    } else {
+        return abs(input);
+    }
+}
+
+int
 max(int a, int b)
 {
     return a > b ? a : b;

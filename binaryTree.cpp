@@ -1,3 +1,4 @@
+#include <limits.h>
 #include <stdio.h>
 
 #include "binaryTree.h"
@@ -31,4 +32,38 @@ invertBinaryTree(TreeNode *root)
     root->right = tmp;
 
     return root;
+}
+
+
+/*
+ *------------------------------------------------------------------------------
+ *
+ * These interfaces below are only used for binary search tree.
+ *
+ *------------------------------------------------------------------------------
+ */
+
+int
+getMaxElementOfBinarySearchTree(TreeNode *root)
+{
+    if (root == NULL) return INT_MIN + 1;
+
+    TreeNode *tmp = root;
+    while (tmp->right) {
+        tmp = tmp->right;
+    }
+    return tmp->val;
+}
+
+
+int
+getMinElementOfBinarySearchTree(TreeNode *root)
+{
+    if (root == NULL) return INT_MAX;
+
+    TreeNode *tmp = root;
+    while (tmp->left) {
+        tmp = tmp->left;
+    }
+    return tmp->val;
 }
