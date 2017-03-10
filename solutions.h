@@ -52,6 +52,9 @@ void test_fizzBuzz();
 /* 438. Find All Anagrams in a String */
 void test_findAnagrams();
 
+/* 442. Find All Duplicates in an Array */
+void test_findDuplicates();
+
 /* 448. Find All Numbers Disappeared in an Array */
 void test_findDisappearedNumbers();
 

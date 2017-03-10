@@ -280,6 +280,61 @@ test_findAnagrams()
 }
 
 
+/* 442. Find All Duplicates in an Array */
+
+/* Given an array of integers, 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+
+Find all the elements that appear twice in this array.
+
+Could you do it without extra space and in O(n) runtime?
+
+Example:
+
+Input:
+[4,3,2,7,8,2,3,1]
+
+Output:
+[2,3]
+*/
+
+int *
+findDuplicates(int *nums, int numsSize, int *returnSize)
+{
+    // TODO: to make it meet the space requirement.
+    *returnSize = 0;
+    if (nums == NULL || numsSize <= 0) return NULL;
+
+    int *data = (int *)malloc(numsSize * sizeof(int));
+    int *ret = (int *)malloc(numsSize * sizeof(int));
+    memset(data, 0, numsSize * sizeof(int));
+
+    for (int i = 0; i < numsSize; i++) {
+        data[nums[i] - 1]++;
+    }
+
+    int index = 0;
+    for (int i = 0; i < numsSize; i++) {
+        if (data[i] > 1) {
+            ret[index++] = i + 1;
+            (*returnSize)++;
+        }
+    }
+
+    free(data);
+    return ret;
+}
+
+void
+test_findDuplicates()
+{
+    int nums[8] = {4, 3, 2, 7, 8, 2, 3, 1};
+    int len = 0;
+    int *output = findDuplicates(nums, 8, &len);
+    util::printIntArray(output, len);
+    free(output);
+}
+
+
 /* 448. Find All Numbers Disappeared in an Array */
 
 /* Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
