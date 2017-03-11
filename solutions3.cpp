@@ -95,6 +95,32 @@ test_reverseString()
 }
 
 
+/* 349. Intersection of Two Arrays */
+
+/*  Given two arrays, write a function to compute their intersection.
+
+Example:
+Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2].
+
+Note:
+
+    Each element in the result must be unique.
+    The result can be in any order.
+*/
+
+int *
+intersection(int *nums1, int nums1Size, int *nums2, int nums2Size, int *returnSize)
+{
+
+}
+
+void
+test_intersection()
+{
+
+}
+
+
 /* 371. Sum of Two Integers */
 
 /* Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.
@@ -120,6 +146,33 @@ void
 test_getSum()
 {
     printf("%d\n", getSum(1, 2));
+}
+
+
+/* 383. Ransom Note */
+
+/*  Given an arbitrary ransom note string and another string containing letters from all the magazines, write a function that will return true if the ransom note can be constructed from the magazines ; otherwise, it will return false.
+
+Each letter in the magazine string can only be used once in your ransom note.
+
+Note:
+You may assume that both strings contain only lowercase letters.
+
+canConstruct("a", "b") -> false
+canConstruct("aa", "ab") -> false
+canConstruct("aa", "aab") -> true
+*/
+
+bool
+canConstruct(char *ransomNote, char *magazine)
+{
+
+}
+
+void
+test_canConstruct()
+{
+
 }
 
 

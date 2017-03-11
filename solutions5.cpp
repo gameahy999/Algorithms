@@ -73,6 +73,37 @@ test_findWords()
 }
 
 
+/* 504. Base 7 */
+
+/* Given an integer, return its base 7 string representation.
+
+Example 1:
+
+Input: 100
+Output: "202"
+
+Example 2:
+
+Input: -7
+Output: "-10"
+
+Note: The input will be in range of [-1e7, 1e7].
+*/
+
+char *
+convertToBase7(int num)
+{
+    // TODO
+    return NULL;
+}
+
+void
+test_convertToBase7()
+{
+
+}
+
+
 /* 506. Relative Ranks */
 
 /* Given scores of N athletes, find their relative ranks and the people with the top three highest scores, who will be awarded medals: "Gold Medal", "Silver Medal" and "Bronze Medal".

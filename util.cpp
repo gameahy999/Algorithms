@@ -98,6 +98,10 @@ void
 initializeIntArray(int *A, int n)
 {
     if (A == NULL || n <= 0) return;
+    /*
+     * Easy to make a mistake here. memset is usually used for initialize
+     * char arrays.
+     */
     memset(A, 0, n * sizeof(int));
 }
 

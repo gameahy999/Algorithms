@@ -55,6 +55,35 @@ test_removeKdigits()
 }
 
 
+/* 404. Sum of Left Leaves */
+
+/* Find the sum of all left leaves in a given binary tree.
+
+Example:
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+There are two left leaves in the binary tree, with values 9 and 15 respectively. Return 24.
+*/
+
+int
+sumOfLeftLeaves(struct TreeNode* root)
+{
+    // TODO
+    return 0;
+}
+
+void
+test_sumOfLeftLeaves()
+{
+
+}
+
+
 /* 410. Split Array Largest Sum */
 
 /* Given an array which consists of non-negative integers and an integer m, you can split the array into m non-empty continuous subarrays. Write an algorithm to minimize the largest sum among these m subarrays.
@@ -444,6 +473,81 @@ test_frequencySort()
 }
 
 
+/* 453. Minimum Moves to Equal Array Elements */
+
+/* Given a non-empty integer array of size n, find the minimum number of moves required to make all array elements equal, where a move is incrementing n - 1 elements by 1.
+
+Example:
+
+Input:
+[1,2,3]
+
+Output:
+3
+
+Explanation:
+Only three moves are needed (remember each move increments two elements):
+
+[1,2,3]  =>  [2,3,3]  =>  [3,4,3]  =>  [4,4,4]
+*/
+
+int
+minMoves(int *nums, int numsSize)
+{
+    // TODO
+    return 0;
+}
+
+void
+test_minMoves()
+{
+
+}
+
+
+/* 455. Assign Cookies */
+
+/*  Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie. Each child i has a greed factor gi, which is the minimum size of a cookie that the child will be content with; and each cookie j has a size sj. If sj >= gi, we can assign the cookie j to the child i, and the child i will be content. Your goal is to maximize the number of your content children and output the maximum number.
+
+Note:
+You may assume the greed factor is always positive.
+You cannot assign more than one cookie to one child.
+
+Example 1:
+
+Input: [1,2,3], [1,1]
+
+Output: 1
+
+Explanation: You have 3 children and 2 cookies. The greed factors of 3 children are 1, 2, 3.
+And even though you have 2 cookies, since their size is both 1, you could only make the child whose greed factor is 1 content.
+You need to output 1.
+
+Example 2:
+
+Input: [1,2], [1,2,3]
+
+Output: 2
+
+Explanation: You have 2 children and 3 cookies. The greed factors of 2 children are 1, 2.
+You have 3 cookies and their sizes are big enough to gratify all of the children,
+You need to output 2.
+*/
+
+int
+findContentChildren(int *g, int gSize, int *s, int sSize)
+{
+    // TODO
+    return 0;
+}
+
+void
+test_findContentChildren()
+{
+
+}
+
+
 /* 461. Hamming Distance */
 
 int
@@ -757,12 +861,12 @@ test_findPoisonedDuration()
     int time_array1[2] = {1, 4};
     printf("%d\n", findPoisonedDuration(time_array1, 2, 2));
 
-    util::printDelimiter('*');
+    util::printDelimiter();
 
     int time_array2[2] = {1, 2};
     printf("%d\n", findPoisonedDuration(time_array2, 2, 2));
 
-    util::printDelimiter('*');
+    util::printDelimiter();
 
     printf("%d\n", findPoisonedDuration(NULL, 0, 10000));
 }

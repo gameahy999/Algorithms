@@ -40,11 +40,20 @@ void test_countBits();
 /* 344. Reverse String */
 void test_reverseString();
 
+/* 349. Intersection of Two Arrays */
+void test_intersection();
+
 /* 371. Sum of Two Integers */
 void test_getSum();
 
+/* 383. Ransom Note */
+void test_canConstruct();
+
 /* 389. Find the Difference */
 void test_findTheDifference();
+
+/* 404. Sum of Left Leaves */
+void test_sumOfLeftLeaves();
 
 /* 412. Fizz Buzz */
 void test_fizzBuzz();
@@ -60,6 +69,12 @@ void test_findDisappearedNumbers();
 
 /* 451. Sort Characters By Frequency*/
 void test_frequencySort();
+
+/* 453. Minimum Moves to Equal Array Elements */
+void test_minMoves();
+
+/* 455. Assign Cookies */
+void test_findContentChildren();
 
 /* 461. Hamming Distance */
 void test_hammingDistance();
@@ -84,6 +99,9 @@ void test_nextGreaterElement();
 
 /* 500. Keyboard Row */
 void test_findWords();
+
+/* 504. Base 7 */
+void test_convertToBase7();
 
 /* 506. Relative Ranks */
 void test_findRelativeRanks();
