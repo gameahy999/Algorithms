@@ -58,6 +58,9 @@ void test_findDuplicates();
 /* 448. Find All Numbers Disappeared in an Array */
 void test_findDisappearedNumbers();
 
+/* 451. Sort Characters By Frequency*/
+void test_frequencySort();
+
 /* 461. Hamming Distance */
 void test_hammingDistance();
 
@@ -73,6 +76,9 @@ void test_findMaxConsecutiveOnes();
 /* 492. Construct the Rectangle */
 void test_constructRectangle();
 
+/* 495. Teemo Attacking */
+void test_findPoisonedDuration();
+
 /* 496. Next Greater Element I  */
 void test_nextGreaterElement();
 
@@ -81,6 +87,9 @@ void test_findWords();
 
 /* 506. Relative Ranks */
 void test_findRelativeRanks();
+
+/* 508. Most Frequent Subtree Sum */
+void test_findFrequentTreeSum();
 
 /* 520. Detect Capital */
 void test_detectCapitalUse();

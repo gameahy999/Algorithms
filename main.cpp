@@ -1,16 +1,4 @@
-#include <iostream>
-#include <Windows.h>
-
-#include "assignmentOperator.h"
-#include "linkedList.h"
-#include "myException.h"
-#include "ruminations.h"
-#include "sort.h"
 #include "solutions.h"
-#include "util.h"
-#include "winTimer.h"
-
-using namespace std;
 
 /*
  *------------------------------------------------------------------------------
