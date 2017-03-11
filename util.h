@@ -27,11 +27,14 @@ int min(int a, int b);
 int min(int a, int b, int c);
 int min(int *A, int n);
 
+void initializeIntArray(int *A, int n);
+
 void printBin(int n);
 void printOct(int n);
 void printHex(int n);
 void printIntArray(int *A, int n);
 void printBool(bool trueOrFalse);
+void printDelimiter(char delimiter, int length = 80);
 
 int gcd(int a, int b);
 

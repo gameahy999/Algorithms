@@ -57,7 +57,8 @@ main(int argc, char **argv)
     // test_findDisappearedNumbers();
     // test_constructRectangle();
     // test_getMinimumDifference();
-    test_findDuplicates();
+    // test_findDuplicates();
+    test_findPoisonedDuration();
     return 0;
 }
 

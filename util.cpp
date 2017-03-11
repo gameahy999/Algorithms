@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 #include "util.h"
@@ -66,29 +67,38 @@ min(int a, int b, int c)
 int
 max(int *A, int n)
 {
-    int result = A[0];
+    int ret = INT_MIN;
+    if (A == NULL || n <= 0) return ret;
 
-    for (int i = 1; i < n; i++) {
-        if (A[i] > result) {
-            result = A[i];
+    for (int i = 0; i < n; i++) {
+        if (A[i] > ret) {
+            ret = A[i];
         }
     }
 
-    return result;
+    return ret;
 }
 
 int
 min(int *A, int n)
 {
-    int result = A[0];
+    int ret = INT_MAX;
+    if (A == NULL || n <= 0) return ret;
 
-    for (int i = 1; i < n; i++) {
-        if (A[i] < result) {
-            result = A[i];
+    for (int i = 0; i < n; i++) {
+        if (A[i] < ret) {
+            ret = A[i];
         }
     }
 
-    return result;
+    return ret;
+}
+
+void
+initializeIntArray(int *A, int n)
+{
+    if (A == NULL || n <= 0) return;
+    memset(A, 0, n * sizeof(int));
 }
 
 void
@@ -130,6 +140,16 @@ printHex(int n)
     char buf[16] = {0};
     itoa(n, buf, 16);
     printf("0x%s\n", buf);
+}
+
+void
+printDelimiter(char delimiter, int length)
+{
+    printf("\n");
+    for (int i = 0; i < length; i++) {
+        printf("%c", delimiter);
+    }
+    printf("\n\n");
 }
 
 int

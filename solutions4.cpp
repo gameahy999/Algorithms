@@ -735,14 +735,36 @@ Note:
 int
 findPoisonedDuration(int *timeSeries, int timeSeriesSize, int duration)
 {
-    // TODO
-    return 0;
+    if (timeSeries == NULL || timeSeriesSize <= 0) return 0;
+
+    int count = 0;
+    for (int i = 0; i < timeSeriesSize - 1; i++) {
+        int current = timeSeries[i];
+        int next = timeSeries[i + 1];
+        if (current + duration <= next) {
+            count += duration;
+        } else {
+            count += (next - current);
+        }
+    }
+    count += duration; // This is for the last element.
+    return count;
 }
 
 void
 test_findPoisonedDuration()
 {
+    int time_array1[2] = {1, 4};
+    printf("%d\n", findPoisonedDuration(time_array1, 2, 2));
 
+    util::printDelimiter('*');
+
+    int time_array2[2] = {1, 2};
+    printf("%d\n", findPoisonedDuration(time_array2, 2, 2));
+
+    util::printDelimiter('*');
+
+    printf("%d\n", findPoisonedDuration(NULL, 0, 10000));
 }
 
 
