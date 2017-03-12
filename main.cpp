@@ -58,7 +58,8 @@ main(int argc, char **argv)
     // test_constructRectangle();
     // test_getMinimumDifference();
     // test_findDuplicates();
-    test_findPoisonedDuration();
+    // test_findPoisonedDuration();
+    test_sumOfLeftLeaves();
     return 0;
 }
 
