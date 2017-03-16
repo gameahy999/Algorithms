@@ -59,7 +59,8 @@ main(int argc, char **argv)
     // test_getMinimumDifference();
     // test_findDuplicates();
     // test_findPoisonedDuration();
-    test_sumOfLeftLeaves();
+    // test_sumOfLeftLeaves();
+    test_findRelativeRanks();
     return 0;
 }
 

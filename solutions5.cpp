@@ -121,28 +121,62 @@ Note:
 2.All the scores of athletes are guaranteed to be unique.
 */
 
-/**
+/*
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
+
+static void
+getOrder(int *nums, int numsSize, int *order)
+{
+    // TODO
+    order[0] = 1;
+    order[1] = 2;
+    order[2] = 3;
+    order[3] = 4;
+    order[4] = 5;
+}
+
 char **
 findRelativeRanks(int *nums, int numsSize, int *returnSize)
 {
-    return NULL;
-}
+    *returnSize = numsSize;
+    if (nums == NULL || numsSize <= 0) return NULL;
 
-vector<string>
-findRelativeRanks(vector<int>& nums)
-{
-    // TODO
-    std::vector<string> v;
-    return v;
+    char *medal[3] = {0};
+    medal[0] = "Gold Medal";
+    medal[1] = "Silver Medal";
+    medal[2] = "Bronze Medal";
+
+    char **ret = (char **)malloc(numsSize * sizeof(char **));
+    memset(ret, 0, numsSize * sizeof(char **));
+    int *order = (int *)malloc(numsSize * sizeof(int));
+    getOrder(nums, numsSize, order);
+
+    char buffer[16] = {0};
+    for (int i = 0; i < numsSize; i++) {
+        if (order[i] < 4) {
+            ret[i] = strdup(medal[order[i] - 1]);
+        } else {
+            itoa(order[i], buffer, 10);
+            ret[i] = strdup(buffer);
+        }
+    }
+    free(order);
+    return ret;
 }
 
 void
 test_findRelativeRanks()
 {
-
+    int nums[5] = {5, 4, 3, 2, 1};
+    int len = 0;
+    char **output = findRelativeRanks(nums, 5, &len);
+    for (int i = 0; i < len; i++) {
+        printf("%s\n", output[i]);
+        free(output[i]);
+    }
+    free(output);
 }
 
 
