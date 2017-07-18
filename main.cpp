@@ -1,4 +1,5 @@
 #include "solutions.h"
+#include "misc.h"
 
 /*
  *------------------------------------------------------------------------------
@@ -60,7 +61,8 @@ main(int argc, char **argv)
     // test_findDuplicates();
     // test_findPoisonedDuration();
     // test_sumOfLeftLeaves();
-    test_findRelativeRanks();
+    // test_findRelativeRanks();
+    test_sizeof();
     return 0;
 }
 
