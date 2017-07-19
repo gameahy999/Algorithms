@@ -35,6 +35,90 @@ invertBinaryTree(TreeNode *root)
 }
 
 
+static TreeNode *
+constructBinaryTreeCore(int *startPreorder,
+                        int *endPreorder,
+                        int *startInorder,
+                        int *endInorder)
+{
+    // TODO
+    return NULL;
+}
+
+
+TreeNode *
+constructBinaryTree(int *preorder, int *inorder, int length)
+{
+    // TODO
+    return NULL;
+}
+
+
+void
+destructBinaryTree(TreeNode *root)
+{
+
+}
+
+
+/*
+ *------------------------------------------------------------------------------
+ *
+ * Interfaces to traverse a binary tree. Devide into iterative, recursive
+ * and broad first traversal versions.
+ *
+ *------------------------------------------------------------------------------
+ */
+
+void
+preorderTraverseBinaryTree_Iteratively(TreeNode *root, TreeNodeVisitFunc func)
+{
+
+}
+
+
+void
+inorderTraverseBinaryTree_Iteratively(TreeNode *root, TreeNodeVisitFunc func)
+{
+
+}
+
+
+void
+postorderTraverseBinaryTree_Iteratively(TreeNode *root, TreeNodeVisitFunc func)
+{
+
+}
+
+
+void
+preorderTraverseBinaryTree_Recursively(TreeNode *root, TreeNodeVisitFunc func)
+{
+
+}
+
+
+void
+inorderTraverseBinaryTree_Recursively(TreeNode *root, TreeNodeVisitFunc func)
+{
+
+}
+
+
+void
+postorderTraverseBinaryTree_Recursively(TreeNode *root, TreeNodeVisitFunc func)
+{
+
+}
+
+
+void
+broadFirstTraverseBinaryTree(TreeNode *root, TreeNodeVisitFunc func)
+{
+
+}
+
+
 /*
  *------------------------------------------------------------------------------
  *

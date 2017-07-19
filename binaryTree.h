@@ -20,6 +20,20 @@ void printBinaryTree(TreeNode *root);
 TreeNode *generateFullBinaryTree();
 TreeNode *invertBinaryTree(TreeNode *root);
 
+TreeNode *constructBinaryTree(int *preorder, int *inorder, int length);
+void destructBinaryTree(TreeNode *root);
+
+
+typedef void (*TreeNodeVisitFunc) (TreeNode *node);
+
+void preorderTraverseBinaryTree_Iteratively(TreeNode *root, TreeNodeVisitFunc func);
+void inorderTraverseBinaryTree_Iteratively(TreeNode *root, TreeNodeVisitFunc func);
+void postorderTraverseBinaryTree_Iteratively(TreeNode *root, TreeNodeVisitFunc func);
+
+void preorderTraverseBinaryTree_Recursively(TreeNode *root, TreeNodeVisitFunc func);
+void inorderTraverseBinaryTree_Recursively(TreeNode *root, TreeNodeVisitFunc func);
+void postorderTraverseBinaryTree_Recursively(TreeNode *root, TreeNodeVisitFunc func);
+
 /*
  *------------------------------------------------------------------------------
  *
