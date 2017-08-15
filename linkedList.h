@@ -1,6 +1,8 @@
 #ifndef _LINKED_LIST_H_
 #define _LINKED_LIST_H_
 
+#include <cstddef>
+
 struct ListNode {
     int val;
     ListNode *next;

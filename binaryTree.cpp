@@ -41,7 +41,43 @@ constructBinaryTreeCore(int *startPreorder,
                         int *startInorder,
                         int *endInorder)
 {
-    // TODO
+    // int rootValue = startPreorder[0];
+    // TreeNode *root = new TreeNode(rootValue);
+
+    // if (startPreorder == endPreorder) {
+    //     if (startInorder == endInorder &&
+    //         *startPreorder == *startInorder) {
+    //         return root;
+    //     } else {
+    //         throw std::exception("Invalid input.");
+    //     }
+    // }
+
+    // int rootInorder = startInorder;
+    // while (rootInorder <= endInorder && *rootInorder != rootValue) {
+    //     rootInorder++;
+    // }
+
+    // if (rootInorder == endInorder && *rootInorder != rootValue) {
+    //     throw std::exception("Invalid input");
+    // }
+
+    // int leftLength = rootInorder - startInorder;
+    // int *leftPreorderEnd = startPreorder + leftLength;
+    // if (leftLength > 0) {
+    //     root->left = constructBinaryTreeCore(startPreorder + 1,
+    //                                          leftPreorderEnd,
+    //                                          startInorder,
+    //                                          rootInorder - 1);
+    // }
+    // if (leftLength < endPreorder - startPreorder) {
+    //     root->right = constructBinaryTreeCore(leftPreorderEnd + 1,
+    //                                           endPreorder,
+    //                                           rootInorder + 1,
+    //                                           endInorder);
+    // }
+
+    // return root;
     return NULL;
 }
 
@@ -49,15 +85,25 @@ constructBinaryTreeCore(int *startPreorder,
 TreeNode *
 constructBinaryTree(int *preorder, int *inorder, int length)
 {
-    // TODO
-    return NULL;
+    if (preorder == NULL || inorder == NULL || length <= 0) {
+        return NULL;
+    }
+
+    return constructBinaryTreeCore(preorder, preorder + length - 1,
+                                   inorder, inorder + length - 1);
 }
 
 
 void
-destructBinaryTree(TreeNode *root)
+destructBinaryTree(TreeNode **ppRoot) /* IN/OUT */
 {
+    // if (ppRoot == NULL || *ppRoot == NULL) return;
 
+    // destructBinaryTree(&(*ppRoot->left));
+    // destructBinaryTree(&(*ppRoot->right));
+
+    // delete *ppRoot;
+    // *ppRoot = NULL;
 }
 
 

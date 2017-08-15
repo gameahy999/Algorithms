@@ -21,10 +21,10 @@ TreeNode *generateFullBinaryTree();
 TreeNode *invertBinaryTree(TreeNode *root);
 
 TreeNode *constructBinaryTree(int *preorder, int *inorder, int length);
-void destructBinaryTree(TreeNode *root);
+void destructBinaryTree(TreeNode **ppRoot);
 
 
-typedef void (*TreeNodeVisitFunc) (TreeNode *node);
+typedef void (*TreeNodeVisitFunc)(TreeNode *node);
 
 void preorderTraverseBinaryTree_Iteratively(TreeNode *root, TreeNodeVisitFunc func);
 void inorderTraverseBinaryTree_Iteratively(TreeNode *root, TreeNodeVisitFunc func);

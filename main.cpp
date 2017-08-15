@@ -1,5 +1,6 @@
 #include "solutions.h"
 #include "misc.h"
+#include "linkedList.h"
 
 /*
  *------------------------------------------------------------------------------
@@ -31,7 +32,7 @@ int
 main(int argc, char **argv)
 {
     // test_twoSum();
-    // test_linkedList();
+    test_linkedList();
     // test_assignmentOperator();
     // try {
     //     test_exception();
@@ -62,7 +63,7 @@ main(int argc, char **argv)
     // test_findPoisonedDuration();
     // test_sumOfLeftLeaves();
     // test_findRelativeRanks();
-    test_sizeof();
+    // test_sizeof();
     return 0;
 }
 
