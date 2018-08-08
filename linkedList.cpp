@@ -118,6 +118,18 @@ reverseList(ListNode *pHead)
     return pReversedHead;
 }
 
+ListNode *
+reverseListRecursively(ListNode *pHead)
+{
+    if (pHead == NULL || pHead->next == NULL)
+        return pHead;
+
+    ListNode *newNode = reverseListRecursively(pHead->next);
+    pHead->next->next = pHead;
+    pHead->next = NULL;
+    return newNode;
+}
+
 
 /*
  *------------------------------------------------------------------------------
@@ -279,6 +291,16 @@ test_printLinkedListReversingly()
 }
 
 void
+test_reverseLinkedList()
+{
+    ListNode *head = generateIntLinkedList(6, 1, 2, 3, 6, 5, 4);
+    printIntLinkedList(head);
+
+    printIntLinkedList(reverseListRecursively(head));
+    freeLinkedList(head);
+}
+
+void
 test_mergeLinkedList()
 {
     ListNode *head1 = generateIntLinkedList(6, 1, 3, 5, 7, 9, 11);
@@ -327,4 +349,5 @@ test_linkedList()
     test_mergeLinkedList();
     test_loopInLinkedList();
     test_getLength();
+    test_reverseLinkedList();
 }
