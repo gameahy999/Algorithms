@@ -8,6 +8,7 @@
 #include <string>
 
 #include "binaryTree.h"
+#include "linkedList.h"
 #include "search.h"
 #include "sort.h"
 #include "util.h"
@@ -65,6 +66,66 @@ test_twoSum()
     twoSum(a, 6, 15);
 }
 
+
+/* 2. Add Two Numbers */
+
+static int
+singleDigitAdd(ListNode *pNodeA, ListNode *pNodeB, int lastCarry)
+{
+    int sum = lastCarry;
+    if (pNodeA) sum += pNodeA->val;
+    if (pNodeB) sum += pNodeB->val;
+    return sum >= 10 ? sum - 10 : sum;
+}
+
+static int
+calculateCarry(ListNode *pNodeA, ListNode *pNodeB, int lastCarry)
+{
+    int sum = lastCarry;
+    if (pNodeA) sum += pNodeA->val;
+    if (pNodeB) sum += pNodeB->val;
+    return sum >= 10 ? 1 : 0;
+}
+
+ListNode *
+addTwoNumbers(ListNode* l1, ListNode* l2)
+{
+    ListNode *pNode = NULL, *pHead = NULL;
+    int carry = 0;
+
+    while (l1 != NULL || l2 != NULL || carry != 0) {
+        if (pHead == NULL) {
+            pHead = new ListNode(singleDigitAdd(l1, l2, carry));
+            pNode = pHead;
+            carry = calculateCarry(l1, l2, carry);
+        } else {
+            pNode->next = new ListNode(singleDigitAdd(l1, l2, carry));
+            pNode = pNode->next;
+            carry = calculateCarry(l1, l2, carry);
+        }
+
+        if (l1) l1 = l1->next;
+        if (l2) l2 = l2->next;
+    }
+
+    return pHead;
+}
+
+void
+test_addTwoNumbers()
+{
+    ListNode *l1 = generateIntLinkedList(3, 2, 4, 3);
+    ListNode *l2 = generateIntLinkedList(3, 5, 6, 4);
+    printIntLinkedList(addTwoNumbers(l1, l2));
+
+    ListNode *l3 = generateIntLinkedList(2, 1, 8);
+    ListNode *l4 = generateIntLinkedList(1, 0);
+    printIntLinkedList(addTwoNumbers(l3, l4));
+
+    ListNode *l5 = generateIntLinkedList(1, 5);
+    ListNode *l6 = generateIntLinkedList(1, 5);
+    printIntLinkedList(addTwoNumbers(l5, l6));
+}
 
 /* 33. Search in Rotated Sorted Array */
 

@@ -32,7 +32,8 @@ int
 main(int argc, char **argv)
 {
     // test_twoSum();
-    test_linkedList();
+    test_addTwoNumbers();
+    // test_linkedList();
     // test_assignmentOperator();
     // try {
     //     test_exception();

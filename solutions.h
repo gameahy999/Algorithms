@@ -4,6 +4,9 @@
 /* 1. Two Sum */
 void test_twoSum();
 
+/* 2. Add Two Numbers */
+void test_addTwoNumbers();
+
 /* 33. Search in Rotated Sorted Array */
 void test_search();
 
@@ -14,12 +17,6 @@ void test_mySqrt();
 void test_grayCode();
 
 /* 149. Max Points on a Line */
-struct Point {
-    int x;
-    int y;
-    Point() : x(0), y(0) {}
-    Point(int a, int b) : x(a), y(b) {}
-};
 void test_maxPoints();
 
 /* 167. Two Sum II - Input array is sorted */
