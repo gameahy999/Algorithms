@@ -127,6 +127,57 @@ test_addTwoNumbers()
     printIntLinkedList(addTwoNumbers(l5, l6));
 }
 
+
+/* 9. Palindrome Number */
+
+static void
+int2DigitArray(int x, int *digits, int *length)
+{
+    int index = 0;
+    *length = 0;
+
+    while (x != 0) {
+        digits[index] = x % 10;
+        x = x / 10;
+        index++;
+        (*length)++;
+    }
+}
+
+bool
+isPalindrome(int x)
+{
+    if (x < 0) return false;
+
+    int digits[16] = {0};
+    int length = 0;
+    int2DigitArray(x, digits, &length);
+
+    int head = 0, tail = length - 1;
+    bool result = true;
+
+    while (head < tail) {
+        if (digits[head] != digits[tail]) {
+            result = false;
+            break;
+        }
+
+        head++;
+        tail--;
+    }
+
+    return result;
+}
+
+void
+test_isPalindrome()
+{
+    cout << isPalindrome(121) << endl;
+    cout << isPalindrome(-121) << endl;
+    cout << isPalindrome(10) << endl;
+}
+
+
 /* 33. Search in Rotated Sorted Array */
 
 /* Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.

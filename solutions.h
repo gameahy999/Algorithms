@@ -7,6 +7,9 @@ void test_twoSum();
 /* 2. Add Two Numbers */
 void test_addTwoNumbers();
 
+/* 9. Palindrome Number */
+void test_isPalindrome();
+
 /* 33. Search in Rotated Sorted Array */
 void test_search();
 
